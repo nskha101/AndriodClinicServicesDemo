@@ -7,6 +7,9 @@ import android.os.Bundle;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     @Override
@@ -23,4 +26,10 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
+
+    public String Sha256(String password){
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] encodedhash = digest(input.getBytes(StandardCharsets.UTF_8));;
+    }
+
 }
