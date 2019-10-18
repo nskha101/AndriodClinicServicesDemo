@@ -29,14 +29,15 @@ public class MainActivity extends AppCompatActivity {
         //updateUI(currentUser);
     }
 
-    public static String toSHA256(String password) throws NoSuchAlgorithmException{
+    public static String toSHA256(String password){
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] encodedhash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
             return toHexString(encodedhash);
-        } catch {
+        } catch(NoSuchAlgorithmException e) {
+            return null;
         }
-        }
+    }
 
 
     private static String toHexString(byte[] hash)
