@@ -2,8 +2,9 @@ package com.example.seg2105;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.view.View;
 
 
 import java.nio.charset.StandardCharsets;
@@ -47,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
         return hexString.toString();
     }
 
+    public void goToSignIn(View view){
+        Intent intent = new Intent(getApplicationContext(), SignIn.class);
+        startActivity(intent);
+    }
+
+    public void goToSignUp(View view){
+        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+        startActivity(intent);
+    }
 
 
 }

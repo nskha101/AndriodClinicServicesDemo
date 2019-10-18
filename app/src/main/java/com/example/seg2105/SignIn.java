@@ -13,6 +13,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -70,7 +71,7 @@ public class SignIn extends AppCompatActivity {
 
     }
 
-    public void OnclickCheck(){
+    public void onClickCheck(View view){
 
         EditText usernameEditable = findViewById(R.id.usernameID);
         EditText passwordEditable =  findViewById(R.id.passwordID);
