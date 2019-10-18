@@ -7,31 +7,45 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class SignUp extends AppCompatActivity {
+
+    public FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference UserRef = database.getReference("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
     }
 
     public void onCreateClick(View view){
-        //feilds to make: String username,String email, String password, String name, String familyName
-        EditText usernametextfeild = findViewById(R.id.usernamefeild);
-        EditText emailtextfeild = findViewById(R.id.emailfeild);
-        EditText passwordtextfeild = findViewById(R.id.passwordfeild); //convert to sha256
-        EditText nametextfeild = findViewById(R.id.namefeild);
-        EditText familyNametextfeild = findViewById(R.id.familyNamefeild);
+        //fields to make: String username,String email, String password, String name, String familyName
+        EditText usernametextfield = findViewById(R.id.usernamefield);
+        EditText emailtextfield = findViewById(R.id.emailfield);
+        EditText passwordtextfeild = findViewById(R.id.passwordfield); //convert to sha256
+        EditText nametextfeild = findViewById(R.id.namefield);
+        EditText familyNametextfeild = findViewById(R.id.familyNamefield);
         //add radiobutton functionality for patient/employee pick (if patient radiobutton is picked, make role string = Patient, etc
 
-       String username = usernametextfeild.getText().toString();
-       String email = emailtextfeild.getText().toString();
+       String username = usernametextfield.getText().toString();
+       String email = emailtextfield.getText().toString();
        String password = passwordtextfeild.getText().toString();
        String name = nametextfeild.getText().toString();
        String familyName = familyNametextfeild.getText().toString();
-       String role = roleText;
+       //String role = roleText;
 
+       Map<String, User> user = new HashMap<>();
+       user.put(username, new User(username, email, password, name, familyName, role));
+       UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
     }
+
 
 }
