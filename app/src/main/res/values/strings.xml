@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">seg2105</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_sign_in">SignIn</string>
 </resources>

@@ -26,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        //updateUI(currentUser);
     }
 
-    public String toSHA256(String password) throws NoSuchAlgorithmException{
+    public static String toSHA256(String password) throws NoSuchAlgorithmException{
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         byte[] encodedhash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
         return toHexString(encodedhash);
