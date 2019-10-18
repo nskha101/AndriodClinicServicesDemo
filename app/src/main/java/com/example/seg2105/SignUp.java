@@ -2,6 +2,7 @@ package com.example.seg2105;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.regex.Matcher;
 
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 
 public class SignUp extends AppCompatActivity {
@@ -46,6 +48,18 @@ public class SignUp extends AppCompatActivity {
 
        UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
     }
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
+    public boolean validateEmail(String emailId) {
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailId);
+        return matcher.find();
+    }
+    public boolean validatePassword (String password){
+
+    }
+    public boolean validate(String username,String email, String password, String name, String familyName){
+        return validateEmail(email), validatePassword()
+    }
 
 }

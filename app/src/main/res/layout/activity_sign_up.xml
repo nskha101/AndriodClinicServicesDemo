@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
+    <EditText
+        android:id="@+id/usernamefield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <EditText
+        android:id="@+id/emailfield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <EditText
+        android:id="@+id/passwordfield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <EditText
+        android:id="@+id/namefield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <EditText
+        android:id="@+id/familyNamefield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="325dp" />
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCreateClick"
+        android:text="create"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="477dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="385dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
