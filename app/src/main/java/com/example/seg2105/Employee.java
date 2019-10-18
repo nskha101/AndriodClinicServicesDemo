@@ -1,10 +1,14 @@
 package com.example.seg2105;
 
-public class Employee extends Account {
+public class Employee extends User {
 
-    Employee(String username, String password){
+    public Employee( String username,String email, String password, String name, String familyName){
 
-        super(username, password);
+        super(username,email,password,name,familyName, "Employee");
+
+    }
+
+    public Employee(){
 
     }
 
