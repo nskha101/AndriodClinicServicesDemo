@@ -9,6 +9,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.math.BigInteger;
+import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -27,9 +29,26 @@ public class MainActivity extends AppCompatActivity {
         updateUI(currentUser);
     }
 
-    public String Sha256(String password){
+    public String toSHA256(String password) throws NoSuchAlgorithmException{
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedhash = digest(input.getBytes(StandardCharsets.UTF_8));;
+        byte[] encodedhash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+        return toHexString(encodedhash);
+    }
+
+    private static String toHexString(byte[] hash)
+    {
+        BigInteger number = new BigInteger(1, hash);
+
+        // Convert message digest into hex value
+        StringBuilder hexString = new StringBuilder(number.toString(16));
+
+        // Pad with leading zeros
+        while (hexString.length() < 32)
+        {
+            hexString.insert(0, '0');
+        }
+
+        return hexString.toString();
     }
 
 }
