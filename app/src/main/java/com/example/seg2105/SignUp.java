@@ -38,13 +38,9 @@ public class SignUp extends AppCompatActivity {
 
        String username = usernametextfield.getText().toString();
        String email = emailtextfield.getText().toString();
-        String password = null;
-        try {
-            password = MainActivity.toSHA256(passwordtextfeild.getText().toString());
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        String name = nametextfeild.getText().toString();
+       String password = null;
+       password = MainActivity.toSHA256(passwordtextfeild.getText().toString());
+       String name = nametextfeild.getText().toString();
        String familyName = familyNametextfeild.getText().toString();
        //String role = roleText;
 
