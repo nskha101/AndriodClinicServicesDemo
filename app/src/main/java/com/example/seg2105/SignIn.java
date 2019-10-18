@@ -11,7 +11,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -65,6 +68,24 @@ public class SignIn extends AppCompatActivity {
         //This is false because the username was not found
         return false;
 
+    }
+
+    public void OnclickCheck(){
+
+        EditText usernameEditable = findViewById(R.id.usernameID);
+        EditText passwordEditable =  findViewById(R.id.passwordID);
+        String username = usernameEditable.getText().toString();
+        String password = passwordEditable.getText().toString();
+        boolean isUser = infoChecker(username, password);
+
+        if(isUser){
+            Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+            startActivity(intent);
+        }
+        else{
+            TextView errorText = findViewById(R.id.errorText);
+            errorText.setText("The login info was not correct!");
+        }
 
     }
 }
