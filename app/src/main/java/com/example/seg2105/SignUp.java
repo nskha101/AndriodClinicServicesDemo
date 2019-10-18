@@ -42,7 +42,7 @@ public class SignUp extends AppCompatActivity {
        String username = usernametextfield.getText().toString();
        String email = emailtextfield.getText().toString();
        String password = passwordtextfeild.getText().toString();
-       password = passwordtextfeild.getText().toString());
+       password = passwordtextfeild.getText().toString();
        String name = nametextfeild.getText().toString();
        String familyName = familyNametextfeild.getText().toString();
        //String role = roleText;
@@ -51,12 +51,12 @@ public class SignUp extends AppCompatActivity {
        }
        password = MainActivity.toSHA256(password);
 
-       UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
+       //UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
     }
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
     public static final Pattern VALID_NAME_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
     public static final Pattern VALID_USERNAME_REGEX = Pattern.compile("^[a-z0-9_-]{3,15}$", Pattern.CASE_INSENSITIVE);
-    public static final Pattern VALID_PASSWORD_REGEX = Pattern.compile("?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})", Pattern.CASE_INSENSITIVE);
+    public static final Pattern VALID_PASSWORD_REGEX = Pattern.compile("?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40}", Pattern.CASE_INSENSITIVE);
 
 
     public boolean validateEmail(String emailId) {
