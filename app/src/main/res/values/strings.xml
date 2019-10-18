@@ -2,4 +2,7 @@
     <string name="app_name">seg2105</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_sign_in">SignIn</string>
+    <string name="usernameHint">Username</string>
+    <string name="passwordHint">Password</string>
+    <string name="buttonSignIn">Sign In</string>
 </resources>
