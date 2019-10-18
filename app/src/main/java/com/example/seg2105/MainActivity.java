@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth= FirebaseAuth.getInstance();
     }
     @Override
-    public void onStart() {
+    public void onStart() { ` `
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -30,10 +30,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String toSHA256(String password) throws NoSuchAlgorithmException{
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte[] encodedhash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
-        return toHexString(encodedhash);
-    }
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] encodedhash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+            return toHexString(encodedhash);
+        } catch {
+        }
+        }
+
 
     private static String toHexString(byte[] hash)
     {

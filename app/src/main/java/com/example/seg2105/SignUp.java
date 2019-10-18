@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,13 +38,16 @@ public class SignUp extends AppCompatActivity {
 
        String username = usernametextfield.getText().toString();
        String email = emailtextfield.getText().toString();
-       String password = passwordtextfeild.getText().toString();
-       String name = nametextfeild.getText().toString();
+        String password = null;
+        try {
+            password = MainActivity.toSHA256(passwordtextfeild.getText().toString());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        String name = nametextfeild.getText().toString();
        String familyName = familyNametextfeild.getText().toString();
        //String role = roleText;
 
-       Map<String, User> user = new HashMap<>();
-       user.put(username, new User(username, email, password, name, familyName, role));
        UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
     }
 
