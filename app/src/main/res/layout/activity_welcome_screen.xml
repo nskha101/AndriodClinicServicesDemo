@@ -7,16 +7,33 @@
     tools:context=".WelcomeScreen">
 
     <TextView
-        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome" />
+        android:text="Welcome, "
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="38dp" />
 
     <TextView
         android:id="@+id/UserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="name"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are signed in as a "
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="57dp" />
+
+    <TextView
+        android:id="@+id/role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="role"
         tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="193dp" />
+        tools:layout_editor_absoluteY="57dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

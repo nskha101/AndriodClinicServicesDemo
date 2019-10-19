@@ -27,6 +27,6 @@ public class WelcomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_screen);
         MainActivity act = new MainActivity();
         TextView textView = (TextView) findViewById(R.id.UserName);
-        textView.setText(act.getUser());
+        textView.setText(MainActivity.getUser().getUsername());
     }
 }
