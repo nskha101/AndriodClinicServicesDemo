@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,6 +34,7 @@ public class SignUp extends AppCompatActivity {
         EditText passwordtextfeild = findViewById(R.id.passwordfield); //convert to sha256
         EditText nametextfeild = findViewById(R.id.namefield);
         EditText familyNametextfeild = findViewById(R.id.familyNamefield);
+
         //add radiobutton functionality for patient/employee pick (if patient radiobutton is picked, make role string = Patient, etc
 
        String username = usernametextfield.getText().toString();
@@ -41,13 +43,25 @@ public class SignUp extends AppCompatActivity {
        password = passwordtextfeild.getText().toString();
        String name = nametextfeild.getText().toString();
        String familyName = familyNametextfeild.getText().toString();
-       //String role = roleText;
-       if(!validate(username, email, password, name, familyName)){
+       boolean checked = ((RadioButton) view).isChecked();
+
+       if(!validate(username, email, password, name, familyName, checked)){
             //make textview that says invalid password, clear all feilds and try again
        }
-       password = MainActivity.toSHA256(password);
 
-       //UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
+       String role = "";
+       password = MainActivity.toSHA256(password);
+        switch(view.getId()) {
+            case R.id.patientButton:
+                if (checked)
+                    role = "Patient";
+                    break;
+            case R.id.employeeButton:
+                if (checked)
+                    role = "Employee";
+                    break;
+        }
+       UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
     }
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
     public static final Pattern VALID_NAME_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
@@ -76,8 +90,8 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    public boolean validate(String username,String email, String password, String name, String familyName){
-        return validateEmail(email) && validatePassword(password) && validateName(name) && validateName(familyName) && validateUsername(username);
+    public boolean validate(String username,String email, String password, String name, String familyName, boolean checked){
+        return validateEmail(email) && validatePassword(password) && validateName(name) && validateName(familyName) && validateUsername(username) && checked;
     }
 
 }
