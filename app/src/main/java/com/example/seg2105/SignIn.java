@@ -74,7 +74,7 @@ public class SignIn extends AppCompatActivity {
 
                 }
                 errorText.setText("Password incorrect!");
-                //This is false beacause the user is found but the password doesnt match
+                //This is false because the user is found but the password doesn't match
                 return false;
             }
 

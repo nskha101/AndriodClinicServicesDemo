@@ -8,10 +8,11 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="151dp"
+        android:layout_height="45dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="27dp"
+        android:layout_marginBottom="8dp"
         android:text="Welcome, "
         android:textSize="14pt"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
@@ -21,20 +22,21 @@
 
     <TextView
         android:id="@+id/UserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="83dp"
+        android:layout_height="45dp"
         android:layout_marginTop="27dp"
         android:layout_marginBottom="8dp"
         android:text="name"
         android:textSize="14pt"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="185dp"
+        android:layout_height="25dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="626dp"
@@ -48,12 +50,13 @@
     <TextView
         android:id="@+id/role"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="626dp"
         android:text="role"
         android:textSize="8pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/UserName" />
+        app:layout_constraintTop_toBottomOf="@+id/UserName"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
