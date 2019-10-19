@@ -10,13 +10,31 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome" />
+        android:text="Welcome, "
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="27dp" />
 
     <TextView
         android:id="@+id/UserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="name"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="193dp" />
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="27dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are signed in as a "
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="46dp" />
+
+    <TextView
+        android:id="@+id/role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="role"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="46dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
