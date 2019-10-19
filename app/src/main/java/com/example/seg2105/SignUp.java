@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,7 +28,7 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    public void onCreateClick(View view){
+    public void onCreateClick(View view) {
         //fields to make: String username,String email, String password, String name, String familyName
         EditText usernametextfield = findViewById(R.id.usernamefield);
         EditText emailtextfield = findViewById(R.id.emailfield);
@@ -35,37 +36,36 @@ public class SignUp extends AppCompatActivity {
         EditText nametextfeild = findViewById(R.id.namefield);
         EditText familyNametextfeild = findViewById(R.id.familyNamefield);
         EditText patientorEmployeeField = findViewById(R.id.patientorEmployeeField);
+        TextView errorView = findViewById(R.id.ErrorView);
 
         //add radiobutton functionality for patient/employee pick (if patient radiobutton is picked, make role string = Patient, etc
 
-       String username = usernametextfield.getText().toString();
-       String email = emailtextfield.getText().toString();
-       String password = passwordtextfeild.getText().toString();
-       password = passwordtextfeild.getText().toString();
-       String name = nametextfeild.getText().toString();
-       String familyName = familyNametextfeild.getText().toString();
-       String patientorEmployee = patientorEmployeeField.getText().toString();
+        String username = usernametextfield.getText().toString();
+        String email = emailtextfield.getText().toString();
+        String password = passwordtextfeild.getText().toString();
+        password = passwordtextfeild.getText().toString();
+        String name = nametextfeild.getText().toString();
+        String familyName = familyNametextfeild.getText().toString();
+        String patientorEmployee = patientorEmployeeField.getText().toString();
 
 
-       if(!validate(username, email, password, name, familyName, patientorEmployee)){
-            //make textview that says invalid password, clear all feilds and try again
-       }
+        if (!validate(username, email, password, name, familyName, patientorEmployee)) {
+        usernametextfield.setText("");
+        emailtextfield.setText("");
+        passwordtextfeild.setText("");
+        nametextfeild.setText("");
+        familyNametextfeild.setText("");
+        patientorEmployeeField.setText("");
+        errorView.setText("Invalid Entry, please try again.");
 
-       String role = "";
-       password = MainActivity.toSHA256(password);
-//        switch(view.getId()) {
-//            case R.id.patientButton:
-//                if (checked)
-//                    role = "Patient";
-//                    break;
-//            case R.id.employeeButton:
-//                if (checked)
-//                    role = "Employee";
-//                    break;
-//        }
-       UserRef.child(username).setValue(new User(username, email, password, name, familyName, role));
+        } else {
+            password = MainActivity.toSHA256(password);
+            UserRef.child(username).setValue(new User(username, email, password, name, familyName, patientorEmployee));
+        }
+
+
     }
-//    boolean checked = ((RadioButton) view).isChecked();
+
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
     public static final Pattern VALID_NAME_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
     public static final Pattern VALID_USERNAME_REGEX = Pattern.compile("^[a-z0-9_-]{3,15}$", Pattern.CASE_INSENSITIVE);
@@ -93,7 +93,7 @@ public class SignUp extends AppCompatActivity {
 
     }
     public boolean validatepatientorEmployee(String patientorEmployee){
-        return true;
+        return ((patientorEmployee == "patient") || (patientorEmployee == "employee"));
     }
 
     public boolean validate(String username,String email, String password, String name, String familyName, String patientorEmployee){
