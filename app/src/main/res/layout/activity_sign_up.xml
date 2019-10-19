@@ -99,22 +99,12 @@
             android:gravity="center"
             android:text="Patient or Employee " />
 
-        <RadioGroup
+        <EditText
+            android:id="@+id/patientorEmployeeField"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <RadioButton
-                android:id="@+id/patientButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Patient" />
-
-            <RadioButton
-                android:id="@+id/employeeButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Employee" />
-        </RadioGroup>
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/create"
