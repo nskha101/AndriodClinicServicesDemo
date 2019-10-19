@@ -2,7 +2,6 @@ package com.example.seg2105;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.net.PasswordAuthentication;
 import java.util.regex.Matcher;
 
 import android.os.Bundle;
@@ -12,9 +11,6 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 

@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void goToSignIn(View view){
         Intent intent = new Intent(getApplicationContext(), SignIn.class);
         startActivity(intent);
+
     }
 
     public void goToSignUp(View view){
