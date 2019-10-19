@@ -22,8 +22,7 @@ import java.util.ArrayList;
 public class SignIn extends AppCompatActivity {
 
     //Make sure that the database reference is our database
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference userRef = database.getReference();
+
     final ArrayList<User> users = new ArrayList<>();
 
 
@@ -32,30 +31,10 @@ public class SignIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-    }
-
-    public boolean infoChecker(final String currentUsername, final String currentPassword){
-
-        String shaPassword = MainActivity.toSHA256(currentPassword);
-
-        for (User currentUser: users) {
-            if(currentUser.getUsername().equals(currentUsername)){
-
-                if(currentUser.getPassword().equals(shaPassword)){
-                    return true;
-                }
-                //This is false beacause the user is found but the password doesnt match
-                return false;
-            }
-        }
-        //This is false because the username was not found
-        return false;
-
-    }
-
-    public void onClickCheck(View view){
-
-        userRef.child("User").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference();
+        userRef
+        userRef.child("users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //fet all the child of User
@@ -63,6 +42,7 @@ public class SignIn extends AppCompatActivity {
                 for (DataSnapshot child: children) {
 
                     User currentChild = child.getValue(User.class);
+                    currentChild.print();
                     users.add(currentChild);
 
                 }
@@ -74,19 +54,58 @@ public class SignIn extends AppCompatActivity {
             }
         });
 
+    }
+
+    public boolean infoChecker(final String currentUsername, final String currentPassword){
+
+        String shaPassword = /*MainActivity.toSHA256(*/currentPassword/*)*/;
+        TextView errorText = findViewById(R.id.errorText);
+        errorText.setText("Working");
+        errorText.setText(String.valueOf(users.size()));
+
+        for (int i=0; i<users.size(); i++) {
+            errorText.setText(users.get(i).toString());
+            if(users.get(i).getUsername().equals(currentUsername)){
+                errorText.setText("The login info was not correct!(Username found)");
+                System.out.println("Username match");
+
+                if(users.get(i).getPassword().equals(shaPassword)){
+
+                    System.out.println("password match");
+                    return true;
+
+                }
+                //This is false beacause the user is found but the password doesnt match
+                return false;
+            }
+
+        }
+        //This is false because the username was not found
+        return false;
+
+    }
+
+    public void onClickCheck(View view){
+
+
+
         EditText usernameEditable = findViewById(R.id.usernameID);
         EditText passwordEditable =  findViewById(R.id.passwordID);
         String username = usernameEditable.getText().toString();
         String password = passwordEditable.getText().toString();
         boolean isUser = infoChecker(username, password);
 
+        for (User u: users) {
+            u.print();
+        }
+
         if(isUser){
             Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
             startActivity(intent);
         }
         else{
-            TextView errorText = findViewById(R.id.errorText);
-            errorText.setText("The login info was not correct!");
+
+
         }
 
     }

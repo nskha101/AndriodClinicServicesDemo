@@ -12,13 +12,14 @@ public class User {
     private String role;
 
     public User( String username,String email, String password, String name, String familyName, String role){
-        this.email = email;
         this.username = username;
+        this.email = email;
         this.password = password;
         this.name = name;
         this.familyName = familyName;
         this.role = role;
     }
+
 
     public User(){
 
@@ -46,5 +47,13 @@ public class User {
 
     public String getRole(){
         return role;
+    }
+
+    public void print(){
+        System.out.println("Username = "+username+ " password = "+ password + " email = " + email);
+    }
+
+    public  String toString(){
+        return "Username = "+username+ " password = "+ password + " email = " + email;
     }
 }
