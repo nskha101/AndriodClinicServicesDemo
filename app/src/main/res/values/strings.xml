@@ -5,4 +5,5 @@
     <string name="usernameHint">Username</string>
     <string name="passwordHint">Password</string>
     <string name="buttonSignIn">Sign In</string>
+    <string name="signInText">Sign In</string>
 </resources>

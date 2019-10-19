@@ -58,7 +58,7 @@ public class SignIn extends AppCompatActivity {
 
     public boolean infoChecker(final String currentUsername, final String currentPassword){
 
-        String shaPassword = MainActivity.toSHA256(currentPassword);
+        String shaPassword = /*MainActivity.toSHA256(*/currentPassword/*)*/;
         TextView errorText = findViewById(R.id.errorText);
 
         for (int i=0; i<users.size(); i++) {
