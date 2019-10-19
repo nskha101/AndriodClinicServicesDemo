@@ -62,8 +62,6 @@ public class SignUp extends AppCompatActivity {
             password = MainActivity.toSHA256(password);
             UserRef.child(username).setValue(new User(username, email, password, name, familyName, patientorEmployee));
         }
-
-
     }
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -73,13 +71,14 @@ public class SignUp extends AppCompatActivity {
 
 
     public boolean validateEmail(String emailId) {
-        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailId);
-        return matcher.find();
+//        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailId);
+//        return matcher.find();
+        return true;
     }
     public boolean validatePassword (String password){
-        Matcher matcher = VALID_PASSWORD_REGEX.matcher(password);
-        return (matcher.find()) && (6 <= password.length() && 12 >= password.length());
-
+//        Matcher matcher = VALID_PASSWORD_REGEX.matcher(password);
+//        return (matcher.find()) && (6 <= password.length() && 12 >= password.length());
+        return true;
     }
     public boolean validateUsername(String username){
         Matcher matcher = VALID_USERNAME_REGEX.matcher(username);
@@ -98,6 +97,7 @@ public class SignUp extends AppCompatActivity {
 
     public boolean validate(String username,String email, String password, String name, String familyName, String patientorEmployee){
         return validateEmail(email) && validatePassword(password) && validateName(name) && validateName(familyName) && validateUsername(username) && validatepatientorEmployee(patientorEmployee);
+
     }
 
 }
