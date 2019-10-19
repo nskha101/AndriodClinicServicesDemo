@@ -58,28 +58,28 @@ public class SignIn extends AppCompatActivity {
 
     public boolean infoChecker(final String currentUsername, final String currentPassword){
 
-        String shaPassword = /*MainActivity.toSHA256(*/currentPassword/*)*/;
+        String shaPassword = MainActivity.toSHA256(currentPassword);
         TextView errorText = findViewById(R.id.errorText);
-        errorText.setText("Working");
-        errorText.setText(String.valueOf(users.size()));
 
         for (int i=0; i<users.size(); i++) {
-            errorText.setText(users.get(i).toString());
+
             if(users.get(i).getUsername().equals(currentUsername)){
-                errorText.setText("The login info was not correct!(Username found)");
-                System.out.println("Username match");
+
 
                 if(users.get(i).getPassword().equals(shaPassword)){
 
                     System.out.println("password match");
+                    MainActivity.setUser(users.get(i));
                     return true;
 
                 }
+                errorText.setText("Password incorrect!");
                 //This is false beacause the user is found but the password doesnt match
                 return false;
             }
 
         }
+        errorText.setText("Username not found!");
         //This is false because the username was not found
         return false;
 
