@@ -6,72 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
-    <EditText
-        android:id="@+id/usernamefield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="89dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/emailfield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="144dp" />
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Name" />
 
-    <EditText
-        android:id="@+id/passwordfield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="202dp" />
+        <EditText
+            android:id="@+id/namefield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|fill_vertical"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/namefield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="260dp" />
+        <TextView
+            android:id="@+id/passwordView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Password" />
 
-    <EditText
-        android:id="@+id/familyNamefield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="325dp" />
+        <EditText
+            android:id="@+id/passwordfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|fill_vertical"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/create"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onCreateClick"
-        android:text="create"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="477dp" />
+        <TextView
+            android:id="@+id/familyNameview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Family Name" />
 
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="385dp" />
+        <EditText
+            android:id="@+id/familyNamefield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|fill_vertical"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/EmailView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Email" />
+
+        <EditText
+            android:id="@+id/emailfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|fill_vertical"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/UsernameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Username" />
+
+        <EditText
+            android:id="@+id/usernamefield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|fill_vertical"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/PatientorEmployeeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Patient or Employee " />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/patientButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patient" />
+
+            <RadioButton
+                android:id="@+id/employeeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Employee" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|fill_vertical"
+            android:gravity="center"
+            android:onClick="onCreateClick"
+            android:text="create" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
