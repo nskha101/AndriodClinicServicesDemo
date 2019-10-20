@@ -1,5 +1,5 @@
 package com.example.seg2105;
-
+//import statment
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
