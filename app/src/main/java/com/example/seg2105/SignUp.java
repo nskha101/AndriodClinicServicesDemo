@@ -62,6 +62,7 @@ public class SignUp extends AppCompatActivity {
         } else {
             password = MainActivity.toSHA256(password);
             UserRef.child(username).setValue(new User(username, email, password, name, familyName, patientorEmployee));
+            finish();
         }
     }
 

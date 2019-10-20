@@ -102,6 +102,7 @@ public class SignIn extends AppCompatActivity {
         if(isUser){
             Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
             startActivity(intent);
+            finish();
         }
         else{
 
