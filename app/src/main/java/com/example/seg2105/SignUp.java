@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.regex.Matcher;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -50,13 +51,13 @@ public class SignUp extends AppCompatActivity {
 
 
         if (!validate(username, email, password, name, familyName, patientorEmployee)) {
-        usernametextfield.setText("");
-        emailtextfield.setText("");
-        passwordtextfeild.setText("");
-        nametextfeild.setText("");
-        familyNametextfeild.setText("");
-        patientorEmployeeField.setText("");
-        errorView.setText("Invalid Entry, please try again.");
+            usernametextfield.setText("");
+            emailtextfield.setText("");
+            passwordtextfeild.setText("");
+            nametextfeild.setText("");
+            familyNametextfeild.setText("");
+            patientorEmployeeField.setText("");
+            errorView.setText("Invalid Entry, please try again.");
 
         } else {
             password = MainActivity.toSHA256(password);
@@ -67,37 +68,38 @@ public class SignUp extends AppCompatActivity {
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
     public static final Pattern VALID_NAME_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
     public static final Pattern VALID_USERNAME_REGEX = Pattern.compile("^[a-z0-9_-]{3,15}$", Pattern.CASE_INSENSITIVE);
-    public static final Pattern VALID_PASSWORD_REGEX = Pattern.compile("(?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40}", Pattern.CASE_INSENSITIVE);
 
 
     public boolean validateEmail(String emailId) {
-//        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailId);
-//        return matcher.find();
-        return true;
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailId);
+        return matcher.find();
     }
-    public boolean validatePassword (String password){
-//        Matcher matcher = VALID_PASSWORD_REGEX.matcher(password);
-//        return (matcher.find()) && (6 <= password.length() && 12 >= password.length());
-        return true;
+
+    public boolean validatePassword(String password) {
+        return (password.length() >= 6);
+
     }
-    public boolean validateUsername(String username){
+
+    public boolean validateUsername(String username) {
         Matcher matcher = VALID_USERNAME_REGEX.matcher(username);
         return (matcher.find()) && (6 <= username.length() && 12 >= username.length());
 
     }
 
-    public boolean validateName(String name){
+    public boolean validateName(String name) {
         Matcher matcher = VALID_NAME_REGEX.matcher(name);
         return (matcher.find());
 
     }
-    public boolean validatepatientorEmployee(String patientorEmployee){
-        return ((patientorEmployee == "patient") || (patientorEmployee == "employee"));
+
+
+    public boolean validatepatientorEmployee(String patientorEmployee) {
+        return ((patientorEmployee.equals("patient")) || (patientorEmployee.equals("employee")));
     }
 
-    public boolean validate(String username,String email, String password, String name, String familyName, String patientorEmployee){
+    public boolean validate(String username, String email, String password, String name, String familyName, String patientorEmployee) {
         return validateEmail(email) && validatePassword(password) && validateName(name) && validateName(familyName) && validateUsername(username) && validatepatientorEmployee(patientorEmployee);
+        // Log.d("VALIDATION", String.valueOf(validateEmail(email)));
 
     }
-
 }
