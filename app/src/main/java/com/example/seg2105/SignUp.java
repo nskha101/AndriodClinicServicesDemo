@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.regex.Matcher;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -63,7 +62,6 @@ public class SignUp extends AppCompatActivity {
         } else {
             password = MainActivity.toSHA256(password);
             UserRef.child(username).setValue(new User(username, email, password, name, familyName, patientorEmployee));
-            goToSignIn(view);
         }
     }
 
@@ -96,18 +94,12 @@ public class SignUp extends AppCompatActivity {
 
 
     public boolean validatepatientorEmployee(String patientorEmployee) {
-
         return ((patientorEmployee.equals("patient")) || (patientorEmployee.equals("employee")));
     }
 
     public boolean validate(String username, String email, String password, String name, String familyName, String patientorEmployee) {
         return validateEmail(email) && validatePassword(password) && validateName(name) && validateName(familyName) && validateUsername(username) && validatepatientorEmployee(patientorEmployee);
         // Log.d("VALIDATION", String.valueOf(validateEmail(email)));
-
-    }
-    public void goToSignIn(View view){
-        Intent intent = new Intent(getApplicationContext(), SignIn.class);
-        startActivity(intent);
 
     }
 }
