@@ -48,7 +48,7 @@ public class SignUp extends AppCompatActivity {
         String familyName = familyNametextfeild.getText().toString();
         String patientorEmployee = patientorEmployeeField.getText().toString();
 
-
+//test
         if (!validate(username, email, password, name, familyName, patientorEmployee)) {
             usernametextfield.setText("");
             emailtextfield.setText("");
