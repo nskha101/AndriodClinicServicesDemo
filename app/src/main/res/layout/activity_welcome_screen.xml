@@ -67,4 +67,13 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/Continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Continue"
+        tools:layout_editor_absoluteX="277dp"
+        tools:layout_editor_absoluteY="460dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

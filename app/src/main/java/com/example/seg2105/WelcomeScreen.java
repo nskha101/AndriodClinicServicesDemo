@@ -30,4 +30,10 @@ public class WelcomeScreen extends AppCompatActivity {
         TextView text2 = (TextView) findViewById(R.id.role);
         text2.setText(MainActivity.getUser().getRole());
     }
+
+    protected void onClick(View view){
+        ntent intent = new Intent(getApplicationContext(), AdminScreen.class);
+
+    }
+
 }
