@@ -5,16 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.regex.Matcher;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Pattern;
+
 
 
 public class SignUp extends AppCompatActivity {
