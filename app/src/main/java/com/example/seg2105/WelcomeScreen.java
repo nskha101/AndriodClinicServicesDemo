@@ -32,7 +32,7 @@ public class WelcomeScreen extends AppCompatActivity {
     }
 
     protected void onClick(View view){
-        ntent intent = new Intent(getApplicationContext(), AdminScreen.class);
+        Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
 
     }
 
