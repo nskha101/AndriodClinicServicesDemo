@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WelcomeScreen extends AppCompatActivity {
+public class WelcomeScreen extends addService {
 
     ListView listview;
     List list = new ArrayList();
@@ -40,11 +40,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
        listview = (ListView)findViewById(R.id.list_view);
 
-        if (tail!=0){
-            for (int i=0; i<tail+1; i++){
-                list.add(servicelist[i].getServiceName());
-            }
-        }
+        /*add services*/
 
         adapter = new ArrayAdapter(WelcomeScreen.this,android.R.layout.simple_expandable_list_item_1,list);
         listview.setAdapter(adapter);
@@ -53,9 +49,5 @@ public class WelcomeScreen extends AppCompatActivity {
     public void onClick(View view){
         Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
         startActivity(intent);
-    }
-    public void addService (Service service){
-        servicelist[tail]=service;
-        tail++;
     }
 }

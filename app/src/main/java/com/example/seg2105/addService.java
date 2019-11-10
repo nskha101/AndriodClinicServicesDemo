@@ -7,33 +7,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class addService extends AppCompatActivity {
 
-    EditText serviceNameInput;
-    EditText serviceRateInput;
-    Service service;
-    WelcomeScreen welcome;
-    //Service[] services = new Service[10];
-    //int tail= 0;
+    public FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference serviceRef = database.getReference("services");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_service);
 
-        service = new Service();
-        welcome= new WelcomeScreen();
-        serviceNameInput = (EditText) findViewById(R.id.serviceName);
-        serviceRateInput = (EditText) findViewById(R.id.serviceRate);
 
-        service.setServiceName(serviceNameInput.toString());
-        service.setRate(serviceRateInput.toString());
-        welcome.addService(service);
+        EditText serviceNameInput = (EditText) findViewById(R.id.serviceName);
+        EditText serviceRateInput = (EditText) findViewById(R.id.serviceRate);
+
+        String servicename = serviceNameInput.getText().toString();
+        String rate = serviceRateInput.getText().toString();
 
     }
 
     public void onClick(View view){
-        Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+        startActivity(intent);*/
+
+        EditText serviceNameInput = (EditText) findViewById(R.id.serviceName);
+        EditText serviceRateInput = (EditText) findViewById(R.id.serviceRate);
+
+        String servicename = serviceNameInput.getText().toString();
+        String rate = serviceRateInput.getText().toString();
+
+        serviceRef.child(servicename).setValue(new Service(servicename,rate));
+        finish();
     }
 }
