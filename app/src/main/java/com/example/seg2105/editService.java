@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditService extends AppCompatActivity {
+public class editService extends AppCompatActivity {
 
     final ArrayList<Service> services = new ArrayList<>();
 
