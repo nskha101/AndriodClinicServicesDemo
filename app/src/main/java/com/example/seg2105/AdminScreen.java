@@ -14,8 +14,23 @@ public class AdminScreen extends AppCompatActivity {
         setContentView(R.layout.activity_admin_screen);
     }
 
-    public void onClick(View view){
+    public void goToAddService(View view){
         Intent intent = new Intent(getApplicationContext(), addService.class);
+        startActivity(intent);
+    }
+
+    public void goToDeleteService(View view){
+        Intent intent = new Intent(getApplicationContext(), DeleteService.class);
+        startActivity(intent);
+    }
+
+    public void goToEditService(View view){
+        Intent intent = new Intent(getApplicationContext(), EditService.class);
+        startActivity(intent);
+    }
+
+    public void goToAddUser(View view){
+        Intent intent = new Intent(getApplicationContext(), AddUser.class);
         startActivity(intent);
     }
 
