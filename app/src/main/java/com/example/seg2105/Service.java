@@ -4,12 +4,11 @@ package com.example.seg2105;
 public class Service {
     private String serviceName;
     private String rate;
-    Service[] services;
-    int tail;
 
-    public Service(){
-        services  = new Service[10];
-        tail=0;
+
+    public Service(String serviceName, String rate){
+        this.serviceName = serviceName;
+        this.rate=rate;
     }
 
     public String getServiceName(){
@@ -31,11 +30,6 @@ public class Service {
     public void removeService(){
         serviceName = null;
         rate = null;
-    }
-
-
-    public int serviceCount(){
-        return tail;
     }
 
 }
