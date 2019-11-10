@@ -27,7 +27,8 @@ public class WelcomeScreen extends AppCompatActivity {
     ListView listview;
     List list = new ArrayList();
     ArrayAdapter adapter;
-
+    Service[] servicelist = new Service[10];
+    int tail= 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,19 +40,22 @@ public class WelcomeScreen extends AppCompatActivity {
 
        listview = (ListView)findViewById(R.id.list_view);
 
-        list.add("hello");
-        list.add("this");
-        list.add("list");
-        list.add("actually");
-        list.add("works");
+        if (tail!=0){
+            for (int i=0; i<tail+1; i++){
+                list.add(servicelist[i].getServiceName());
+            }
+        }
 
         adapter = new ArrayAdapter(WelcomeScreen.this,android.R.layout.simple_expandable_list_item_1,list);
         listview.setAdapter(adapter);
     }
 
-    protected void onClick(View view){
+    public void onClick(View view){
         Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
-
+        startActivity(intent);
     }
-
+    public void addService (Service service){
+        servicelist[tail]=service;
+        tail++;
+    }
 }
