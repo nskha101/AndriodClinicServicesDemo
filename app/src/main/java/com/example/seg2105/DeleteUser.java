@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,16 +53,26 @@ public class DeleteUser extends AppCompatActivity {
     }
     public void delete(View view){
 
-    EditText temp = findViewById(R.id.usernameDeleteUser);
-    String userDelete = temp.getText().toString();
+    boolean worked = false;
+    EditText userDeleteField = findViewById(R.id.usernameDeleteUser);
+    String userDelete = userDeleteField.getText().toString();
+    TextView errorMessageField = findViewById(R.id.errorMessageField);
+
 
         for(int i = 0; i<users.size(); i++){
             if(users.get(i).getUsername().equals(userDelete)){
                 usersRef.child("users").child(users.get(i).getUsername()).removeValue();
+                userDeleteField.setText(" ");
+                worked = true;
+
             }
         }
-
-
+        if(worked){
+            errorMessageField.setText("User delete!");
+        }
+        else{
+            errorMessageField.setText("Username not find!");
+        }
 
     }
 }

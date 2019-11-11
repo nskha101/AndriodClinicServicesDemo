@@ -24,9 +24,11 @@
             android:textSize="36sp" />
 
         <TextView
-            android:id="@+id/errorMessageDeleteUser"
+            android:id="@+id/errorMessageField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <EditText
             android:id="@+id/usernameDeleteUser"

@@ -49,8 +49,8 @@ public class TestSignUp {
 
         onView(buttonMacher).perform(click());
 
-        onView(withId(R.id.usernamefield)).perform(typeText("alexdegrace"));
-        onView(withId(R.id.usernamefield)).check(matches(withText("alexdegrace")));
+        onView(withId(R.id.usernamefield)).perform(typeText("alexdegrace4"));
+        onView(withId(R.id.usernamefield)).check(matches(withText("alexdegrace4")));
         Espresso.closeSoftKeyboard();
         onView(withId(R.id.passwordfield)).perform(typeText("degrace1"));
         onView(withId(R.id.passwordfield)).check(matches(withText("degrace1")));
