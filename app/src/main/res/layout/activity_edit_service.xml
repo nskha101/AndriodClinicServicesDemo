@@ -63,9 +63,15 @@
         android:id="@+id/textView12"
         android:layout_width="174dp"
         android:layout_height="20dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="10dp"
         android:text="New Rate"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="458dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <TextView
         android:id="@+id/textView13"
