@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class addService extends AppCompatActivity {
+public class AddService extends AppCompatActivity {
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference serviceRef = database.getReference("services");
