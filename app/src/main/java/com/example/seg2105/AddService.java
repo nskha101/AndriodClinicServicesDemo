@@ -46,7 +46,9 @@ public class AddService extends AppCompatActivity {
 
         String servicename = serviceNameInput.getText().toString();
         String rate = serviceRateInput.getText().toString();
-        String serviceType = serviceEmployeeInput.getText().toString();
+        String serviceemployee = serviceEmployeeInput.getText().toString();
+
+        serviceRef.child(servicename).setValue(new Service(servicename,rate,serviceemployee));
 
         Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
         startActivity(intent);
