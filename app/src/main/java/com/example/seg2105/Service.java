@@ -4,16 +4,16 @@ package com.example.seg2105;
 public class Service {
     private String serviceName;
     private String rate;
-    private String type;
+    private String employee;
 
     public Service(){
 
     }
 
-    public Service(String serviceName, String rate, String type){
+    public Service(String serviceName, String rate, String employee){
         this.serviceName = serviceName;
         this.rate=rate;
-        this.type = type;
+        this.employee = employee;
     }
 
     public String getServiceName(){
@@ -24,7 +24,7 @@ public class Service {
         return rate;
     }
 
-    public String getType() { return type;}
+    public String getEmployee() { return employee;}
 
     public void setServiceName(String name){
         serviceName=name;
@@ -34,8 +34,8 @@ public class Service {
         rate = cost;
     }
 
-    public void setType (String servicetype){
-        type=servicetype;
+    public void setEmployee (String employeename){
+        employee=employeename;
     }
 
     public void removeService(){

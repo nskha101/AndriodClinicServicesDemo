@@ -29,15 +29,13 @@ public class EditService extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_service);
 
-        EditText serviceNameInput = (EditText) findViewById(R.id.editText);
-        EditText newserviceNameInput = (EditText) findViewById(R.id.editText2);
+        /*EditText serviceNameInput = (EditText) findViewById(R.id.editText);
         EditText newserviceRateInput = (EditText) findViewById(R.id.editText3);
-        EditText newserviceTypeInput = (EditText) findViewById(R.id.editText5);
+        EditText newserviceEmployeeInput = (EditText) findViewById(R.id.editText5);
 
         String servicename = serviceNameInput.getText().toString();
-        String newservicename = newserviceNameInput.getText().toString();
         String newrate = newserviceRateInput.getText().toString();
-        String newType = newserviceTypeInput.getText().toString();
+        String newEmployee = newserviceEmployeeInput.getText().toString();*/
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference userRef = database.getReference();
@@ -86,14 +84,12 @@ public class EditService extends AppCompatActivity {
 
 
         EditText servicenameEditable = findViewById(R.id.editText);
-        EditText newserviceName = findViewById(R.id.editText2);
         EditText newrateEdit = findViewById(R.id.editText3);
-        EditText newtypeEdit = findViewById(R.id.editText5);
+        EditText newEmployeeEdit = findViewById(R.id.editText5);
         String service = servicenameEditable.getText().toString();
-        String newservice = newserviceName.getText().toString();
         String newrate = newrateEdit.getText().toString();
-        String newservicetype = newtypeEdit.getText().toString();
-       // String input = service + "/" + "rate";
+        String newserviceemployee = newEmployeeEdit.getText().toString();
+
         boolean isService = infoChecker(service);
 
         for (Service s: services) {
@@ -102,11 +98,7 @@ public class EditService extends AppCompatActivity {
 
         if(isService){
 
-            /*Map<String, Object> userUpdates = new HashMap<>();
-            userUpdates.put(input , newservice);
-            userUpdates.put(service+ "/" + "serviceName", newrate );*/
-
-            serviceRef.child(service).setValue(new Service(newservice,newrate,newservicetype));
+            serviceRef.child(service).setValue(new Service(service,newrate,newserviceemployee));
 
             Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
             startActivity(intent);
