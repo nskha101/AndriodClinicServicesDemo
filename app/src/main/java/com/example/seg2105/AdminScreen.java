@@ -20,7 +20,7 @@ public class AdminScreen extends AppCompatActivity {
     }
 
     public void goToDeleteService(View view){
-        Intent intent = new Intent(getApplicationContext(), deleteService.class);
+        Intent intent = new Intent(getApplicationContext(), DeleteService.class);
         startActivity(intent);
     }
 
