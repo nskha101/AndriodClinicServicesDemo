@@ -14,10 +14,10 @@
         <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
         <activity android:name=".WelcomeScreen" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".EditService" />
         <activity android:name=".DeleteService" />
-        <activity android:name=".DeleteUser" >
+        <activity android:name=".DeleteUser" />
+        <activity android:name=".MainActivity" >
         <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
