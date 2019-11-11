@@ -20,7 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EditService extends AppCompatActivity {
-
+    public FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference serviceRef = database.getReference("services");
     final ArrayList<Service> services = new ArrayList<>();
 
     @Override
@@ -31,10 +32,12 @@ public class EditService extends AppCompatActivity {
         EditText serviceNameInput = (EditText) findViewById(R.id.editText);
         EditText newserviceNameInput = (EditText) findViewById(R.id.editText2);
         EditText newserviceRateInput = (EditText) findViewById(R.id.editText3);
+        EditText newserviceTypeInput = (EditText) findViewById(R.id.editText5);
 
         String servicename = serviceNameInput.getText().toString();
         String newservicename = newserviceNameInput.getText().toString();
         String newrate = newserviceRateInput.getText().toString();
+        String newType = newserviceTypeInput.getText().toString();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference userRef = database.getReference();
@@ -85,10 +88,12 @@ public class EditService extends AppCompatActivity {
         EditText servicenameEditable = findViewById(R.id.editText);
         EditText newserviceName = findViewById(R.id.editText2);
         EditText newrateEdit = findViewById(R.id.editText3);
+        EditText newtypeEdit = findViewById(R.id.editText5);
         String service = servicenameEditable.getText().toString();
         String newservice = newserviceName.getText().toString();
         String newrate = newrateEdit.getText().toString();
-        String input = service + "/" + "rate";
+        String newservicetype = newtypeEdit.getText().toString();
+       // String input = service + "/" + "rate";
         boolean isService = infoChecker(service);
 
         for (Service s: services) {
@@ -97,9 +102,11 @@ public class EditService extends AppCompatActivity {
 
         if(isService){
 
-            Map<String, Object> userUpdates = new HashMap<>();
+            /*Map<String, Object> userUpdates = new HashMap<>();
             userUpdates.put(input , newservice);
-            userUpdates.put(service+ "/" + "serviceName", newrate );
+            userUpdates.put(service+ "/" + "serviceName", newrate );*/
+
+            serviceRef.child(service).setValue(new Service(newservice,newrate,newservicetype));
 
             Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
             startActivity(intent);
