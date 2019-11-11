@@ -103,7 +103,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     }
 
 
-    public boolean validatepatientorEmployee(String patientorEmployee) {
+    public static boolean validatepatientorEmployee(String patientorEmployee) {
         return ((patientorEmployee.equals("patient")) || (patientorEmployee.equals("employee")));
     }
 
