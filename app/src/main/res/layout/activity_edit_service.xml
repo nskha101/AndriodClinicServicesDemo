@@ -92,4 +92,13 @@
         android:layout_marginTop="308dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/clickCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickCheck"
+        android:text="Check"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="566dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
