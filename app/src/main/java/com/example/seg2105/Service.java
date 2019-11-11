@@ -6,6 +6,9 @@ public class Service {
     private String rate;
     private String type;
 
+    public Service(){
+
+    }
 
     public Service(String serviceName, String rate, String type){
         this.serviceName = serviceName;
