@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         userInstance = user;
     }
 
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
