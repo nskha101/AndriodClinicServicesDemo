@@ -39,21 +39,6 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView11"
-            android:layout_width="213dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:text="New Service Name" />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
             android:id="@+id/textView12"
             android:layout_width="214dp"
             android:layout_height="20dp"
@@ -73,7 +58,7 @@
             android:id="@+id/textView15"
             android:layout_width="212dp"
             android:layout_height="wrap_content"
-            android:text="New Service Type" />
+            android:text="Employee" />
 
         <EditText
             android:id="@+id/editText5"
