@@ -7,6 +7,9 @@ import static org.junit.Assert.*;
 public class SignUpTestPorE {
 
     @Test
-    public void validatepatientorEmployee() {
+    public void validateSha() {
+
+
+
     }
 }
