@@ -33,5 +33,9 @@ public class AdminScreen extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), DeleteUser.class);
         startActivity(intent);
     }
+    public void goToDeleteUser(View view){
+        Intent intent = new Intent(getApplicationContext(), DeleteUser.class);
+        startActivity(intent);
+    }
 
 }
