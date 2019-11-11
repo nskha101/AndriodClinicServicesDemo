@@ -14,6 +14,10 @@ public class AdminScreen extends AppCompatActivity {
         setContentView(R.layout.activity_admin_screen);
     }
 
+    public void goToDeleteUser(View view){
+        Intent intent = new Intent(getApplicationContext(), DeleteUser.class);
+        startActivity(intent);
+    }
     public void goToAddService(View view){
         Intent intent = new Intent(getApplicationContext(), AddService.class);
         startActivity(intent);
@@ -29,9 +33,6 @@ public class AdminScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToDeleteUser(View view){
-        Intent intent = new Intent(getApplicationContext(), DeleteUser.class);
-        startActivity(intent);
-    }
+
 
 }
