@@ -53,10 +53,10 @@ public class DeleteUser extends AppCompatActivity {
     }
     public void delete(View view){
 
-    boolean worked = false;
-    EditText userDeleteField = findViewById(R.id.usernameDeleteUser);
-    String userDelete = userDeleteField.getText().toString();
-    TextView errorMessageField = findViewById(R.id.errorMessageField);
+        boolean worked = false;
+        EditText userDeleteField = findViewById(R.id.usernameDeleteService);
+        String userDelete = userDeleteField.getText().toString();
+        TextView errorMessageField = findViewById(R.id.errorMessageField);
 
 
         for(int i = 0; i<users.size(); i++){
