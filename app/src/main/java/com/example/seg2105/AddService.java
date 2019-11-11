@@ -35,6 +35,7 @@ public class AddService extends AppCompatActivity {
     }
 
     public void onClick(View view){
+        //hello
         /*Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
         startActivity(intent);*/
 
