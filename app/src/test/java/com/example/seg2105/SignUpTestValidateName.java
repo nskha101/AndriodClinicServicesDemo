@@ -8,5 +8,6 @@ public class SignUpTestValidateName {
 
     @Test
     public void validateName() {
+
     }
 }

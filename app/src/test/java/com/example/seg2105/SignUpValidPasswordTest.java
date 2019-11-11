@@ -12,8 +12,8 @@ public class SignUpValidPasswordTest {
         String valid = "dstew056@uottawa.ca";
         String invalid = "notavalidemail";
 
-        assertTrue( SignUp.validatePassword(valid));
+        assertTrue( new SignUp().validatePassword(valid));
 
-        assertFalse( SignUp.validatePassword(invalid));
+        assertFalse( new SignUp().validatePassword(invalid));
     }
 }
