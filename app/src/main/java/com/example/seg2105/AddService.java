@@ -24,9 +24,11 @@ public class AddService extends AppCompatActivity {
 
         EditText serviceNameInput = (EditText) findViewById(R.id.serviceName);
         EditText serviceRateInput = (EditText) findViewById(R.id.serviceRate);
+        EditText serviceType = (EditText) findViewById(R.id.serviceType);
 
         String servicename = serviceNameInput.getText().toString();
         String rate = serviceRateInput.getText().toString();
+        String type = serviceType.getText().toString();
 
         Button button = (Button) findViewById(R.id.button);
 
@@ -38,11 +40,13 @@ public class AddService extends AppCompatActivity {
 
         EditText serviceNameInput = (EditText) findViewById(R.id.serviceName);
         EditText serviceRateInput = (EditText) findViewById(R.id.serviceRate);
+        EditText serviceTypeInput = (EditText) findViewById(R.id.serviceType);
 
         String servicename = serviceNameInput.getText().toString();
         String rate = serviceRateInput.getText().toString();
+        String Sertype = serviceTypeInput.getText().toString();
 
-        serviceRef.child(servicename).setValue(new Service(servicename,rate));
+        serviceRef.child(servicename).setValue(new Service(servicename,rate,Sertype));
         finish();
     }
 }
