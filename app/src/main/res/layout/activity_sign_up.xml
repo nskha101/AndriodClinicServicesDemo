@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Password need to be at least 6 charters long!"
+            android:text="Password need to be at least 6 characters long!"
             android:textSize="18sp" />
 
         <TextView
