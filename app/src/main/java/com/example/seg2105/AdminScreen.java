@@ -15,7 +15,7 @@ public class AdminScreen extends AppCompatActivity {
     }
 
     public void goToAddService(View view){
-        Intent intent = new Intent(getApplicationContext(), addService.class);
+        Intent intent = new Intent(getApplicationContext(), AddService.class);
         startActivity(intent);
     }
 
@@ -25,14 +25,10 @@ public class AdminScreen extends AppCompatActivity {
     }
 
     public void goToEditService(View view){
-        Intent intent = new Intent(getApplicationContext(), editService.class);
+        Intent intent = new Intent(getApplicationContext(), EditService.class);
         startActivity(intent);
     }
 
-    public void goToAddUser(View view){
-        Intent intent = new Intent(getApplicationContext(), AddUser.class);
-        startActivity(intent);
-    }
     public void goToDeleteUser(View view){
         Intent intent = new Intent(getApplicationContext(), DeleteUser.class);
         startActivity(intent);
