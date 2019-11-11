@@ -29,7 +29,7 @@ public class AdminScreen extends AppCompatActivity {
     }
 
     public void goToEditService(View view){
-        Intent intent = new Intent(getApplicationContext(), editService.class);
+        Intent intent = new Intent(getApplicationContext(), EditService.class);
         startActivity(intent);
     }
 
