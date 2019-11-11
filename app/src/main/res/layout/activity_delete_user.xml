@@ -8,14 +8,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Space
+        <TextView
+            android:id="@+id/deleteUserText"
             android:layout_width="match_parent"
-            android:layout_height="129dp" />
+            android:layout_height="110dp"
+            android:gravity="center"
+            android:text="Delete Users"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/errorMessageDeleteUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/usernameDeleteUser"
             android:layout_width="355dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -25,12 +38,8 @@
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="29dp" />
-
         <Button
-            android:id="@string/delete"
+            android:id="@+id/deleteButtonDeleteUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="152dp"
