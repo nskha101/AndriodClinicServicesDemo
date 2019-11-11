@@ -20,12 +20,12 @@ public class AdminScreen extends AppCompatActivity {
     }
 
     public void goToDeleteService(View view){
-        Intent intent = new Intent(getApplicationContext(), DeleteService.class);
+        Intent intent = new Intent(getApplicationContext(), deleteService.class);
         startActivity(intent);
     }
 
     public void goToEditService(View view){
-        Intent intent = new Intent(getApplicationContext(), EditService.class);
+        Intent intent = new Intent(getApplicationContext(), editService.class);
         startActivity(intent);
     }
 
