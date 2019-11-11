@@ -32,4 +32,12 @@ public class Service {
         rate = null;
     }
 
+    public void print(){
+        System.out.println("Service Name: "+serviceName+ " Rate: $"+ rate );
+    }
+
+    public String toString(){
+        return this.getServiceName()+" Rate: "+ this.getRate();
+    }
+
 }
