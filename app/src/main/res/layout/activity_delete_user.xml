@@ -29,7 +29,7 @@
             android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/usernameDeleteUser"
+            android:id="@+id/usernameDeleteService"
             android:layout_width="355dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
