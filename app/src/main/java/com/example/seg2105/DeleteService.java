@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class deleteService extends AppCompatActivity {
+public class DeleteService extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
