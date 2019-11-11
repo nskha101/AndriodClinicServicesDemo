@@ -29,8 +29,8 @@ public class AdminScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToAddUser(View view){
-        Intent intent = new Intent(getApplicationContext(), AddUser.class);
+    public void goToDeleteUser(View view){
+        Intent intent = new Intent(getApplicationContext(), DeleteUser.class);
         startActivity(intent);
     }
 
