@@ -5,6 +5,9 @@ public class Service {
     private String serviceName;
     private String rate;
 
+    public Service(){
+
+    }
 
     public Service(String serviceName, String rate){
         this.serviceName = serviceName;
