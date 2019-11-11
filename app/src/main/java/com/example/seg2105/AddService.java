@@ -42,11 +42,11 @@ public class AddService extends AppCompatActivity {
         EditText serviceRateInput = (EditText) findViewById(R.id.serviceRate);
         EditText serviceTypeInput = (EditText) findViewById(R.id.serviceType);
 
+
         String servicename = serviceNameInput.getText().toString();
         String rate = serviceRateInput.getText().toString();
-        String Sertype = serviceTypeInput.getText().toString();
+        String serviceType = serviceTypeInput.getText().toString();
 
-        serviceRef.child(servicename).setValue(new Service(servicename,rate,Sertype));
-        finish();
+
     }
 }
