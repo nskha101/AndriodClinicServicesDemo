@@ -100,9 +100,17 @@ public class SignIn extends AppCompatActivity {
         }
 
         if(isUser){
-            Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
-            startActivity(intent);
-            finish();
+            if(MainActivity.getUser().getRole().equals("Admin")){
+                Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
+                startActivity(intent);
+                finish();
+            }
+            else{
+                Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+                startActivity(intent);
+                finish();
+            }
+
         }
         else{
 
