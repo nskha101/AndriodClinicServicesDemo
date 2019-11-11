@@ -80,23 +80,23 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     public static final Pattern VALID_USERNAME_REGEX = Pattern.compile("^[a-z0-9_-]{3,15}$", Pattern.CASE_INSENSITIVE);
 
 
-    public boolean validateEmail(String emailId) {
+    public static boolean validateEmail(String emailId) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailId);
         return matcher.find();
     }
 
-    public boolean validatePassword(String password) {
+    public static boolean validatePassword(String password) {
         return (password.length() >= 6);
 
     }
 
-    public boolean validateUsername(String username) {
+    public static boolean validateUsername(String username) {
         Matcher matcher = VALID_USERNAME_REGEX.matcher(username);
         return (matcher.find()) && (6 <= username.length() && 12 >= username.length());
 
     }
 
-    public boolean validateName(String name) {
+    public static boolean validateName(String name) {
         Matcher matcher = VALID_NAME_REGEX.matcher(name);
         return (matcher.find());
 
