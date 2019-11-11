@@ -8,11 +8,12 @@ public class SignUpTestValidateName {
 
     @Test
     public void validateName() {
-        String valid = "David";
-        String invalid = "D@v1d";
-        SignUp su = new SignUp();
 
-        assertTrue(su.validateName(valid));
-        assertFalse(su.validateName(invalid));
+        String valid = "alex";
+        String invalid = "al5ex@@";
+
+        assertTrue("test1",SignUp.validateName(valid));
+        assertFalse("test2",SignUp.validateName(invalid));
+
     }
 }

@@ -9,13 +9,11 @@ public class SignUpTestValidateUsername {
     @Test
     public void validateUsername() {
 
-        String valid = "username";
-        String invalid = "user";
-        String invalid2 = "usernametoobig";
-        SignUp su = new SignUp()
+        String valid = "alexdegra";
+        String invalid = "laaskdjeoi@";
 
-        assertTrue(su.validateUsername(valid));
-        assertFalse(su.validateUsername(invalid));
-        assertFalse(su.validateUsername(invalid2));
+        assertTrue("test1",SignUp.validateUsername(valid));
+        assertFalse("test2",SignUp.validateUsername(invalid));
+
     }
 }
