@@ -62,7 +62,7 @@
             android:id="@+id/textView14"
             android:layout_width="212dp"
             android:layout_height="wrap_content"
-            android:text="Service Type" />
+            android:text="Employee" />
 
         <EditText
             android:id="@+id/serviceType"

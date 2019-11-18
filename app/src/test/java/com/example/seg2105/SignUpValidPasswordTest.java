@@ -9,11 +9,11 @@ public class SignUpValidPasswordTest {
     @Test
     public void validatePassword() {
 
-        String valid = "dstew056@uottawa.ca";
-        String invalid = "notavalidemail";
+        String valid = "papapa123";
+        String invalid = "papa";
 
-        assertTrue( new SignUp().validatePassword(valid));
+        assertTrue( SignUp.validatePassword(valid));
 
-        assertFalse( new SignUp().validatePassword(invalid));
+        assertFalse(SignUp.validatePassword(invalid));
     }
 }

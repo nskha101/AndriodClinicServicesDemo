@@ -71,9 +71,9 @@ public class WelcomeScreen extends AppCompatActivity {
     */
     }
 
-
-    public void onClick(View view){
-        Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
-        startActivity(intent);
-    }
+//
+//    public void onClick(View view){
+//        Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
+//        startActivity(intent);
+//    }
 }

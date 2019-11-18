@@ -24,29 +24,34 @@ public class AddService extends AppCompatActivity {
 
         EditText serviceNameInput = (EditText) findViewById(R.id.serviceName);
         EditText serviceRateInput = (EditText) findViewById(R.id.serviceRate);
-        EditText serviceType = (EditText) findViewById(R.id.serviceType);
+        EditText serviceEmployeeInput= (EditText) findViewById(R.id.serviceType);
 
         String servicename = serviceNameInput.getText().toString();
         String rate = serviceRateInput.getText().toString();
-        String type = serviceType.getText().toString();
+        String type = serviceEmployeeInput.getText().toString();
 
         Button button = (Button) findViewById(R.id.button);
 
     }
 
     public void onClick(View view){
+        //hello
         /*Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
         startActivity(intent);*/
 
         EditText serviceNameInput = (EditText) findViewById(R.id.serviceName);
         EditText serviceRateInput = (EditText) findViewById(R.id.serviceRate);
-        EditText serviceTypeInput = (EditText) findViewById(R.id.serviceType);
+        EditText serviceEmployeeInput = (EditText) findViewById(R.id.serviceType);
 
 
         String servicename = serviceNameInput.getText().toString();
         String rate = serviceRateInput.getText().toString();
-        String serviceType = serviceTypeInput.getText().toString();
+        String serviceemployee = serviceEmployeeInput.getText().toString();
 
+        serviceRef.child(servicename).setValue(new Service(servicename,rate,serviceemployee));
 
+        Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
+        startActivity(intent);
+        finish();
     }
 }
