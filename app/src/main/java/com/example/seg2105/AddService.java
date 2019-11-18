@@ -48,7 +48,7 @@ public class AddService extends AppCompatActivity {
         String rate = serviceRateInput.getText().toString();
         String serviceType = serviceEmployeeInput.getText().toString();
 
-        Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+        Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
         startActivity(intent);
         finish();
     }

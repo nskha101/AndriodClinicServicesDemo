@@ -100,7 +100,7 @@ public class EditService extends AppCompatActivity {
 
             serviceRef.child(service).setValue(new Service(service,newrate,newserviceemployee));
 
-            Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+            Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
             startActivity(intent);
             finish();
         }
