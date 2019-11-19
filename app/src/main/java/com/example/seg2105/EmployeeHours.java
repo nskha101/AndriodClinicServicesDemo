@@ -17,4 +17,8 @@ public class EmployeeHours extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), EmployeeScreen.class);
         startActivity(intent);
     }
+    public void goToEmployeeEditHours(View view){
+        Intent intent = new Intent(getApplicationContext(), EmployeeEditHours.class);
+        startActivity(intent);
+    }
 }

@@ -28,11 +28,11 @@
                     android:text="Monday" />
 
                 <TextView
-                    android:id="@+id/textView36"
+                    android:id="@+id/mondayHours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TextView" />
+                    android:text="hours" />
 
             </TableRow>
 
@@ -48,11 +48,11 @@
                     android:text="Tuesday" />
 
                 <TextView
-                    android:id="@+id/textView31"
+                    android:id="@+id/tuesdayHours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TextView" />
+                    android:text="hours" />
             </TableRow>
 
             <TableRow
@@ -67,11 +67,11 @@
                     android:text="Wednesday" />
 
                 <TextView
-                    android:id="@+id/textView32"
+                    android:id="@+id/wednesdayHours"
                     android:layout_width="195dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TextView" />
+                    android:text="hours" />
             </TableRow>
 
             <TableRow
@@ -86,11 +86,11 @@
                     android:text="Thursday" />
 
                 <TextView
-                    android:id="@+id/textView34"
+                    android:id="@+id/thursdayhours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TextView" />
+                    android:text="hours" />
             </TableRow>
 
             <TableRow
@@ -105,13 +105,20 @@
                     android:text="Friday" />
 
                 <TextView
-                    android:id="@+id/textView38"
+                    android:id="@+id/fridayHours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TextView" />
+                    android:text="Hours" />
             </TableRow>
         </TableLayout>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goToEmployeeEditHours"
+            android:text="Edit My Hours" />
 
         <Button
             android:id="@+id/button9"
