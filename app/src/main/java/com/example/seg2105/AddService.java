@@ -49,9 +49,6 @@ public class AddService extends AppCompatActivity {
         String serviceemployee = serviceEmployeeInput.getText().toString();
 
         serviceRef.child(servicename).setValue(new Service(servicename,rate,serviceemployee));
-
-        Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
-        startActivity(intent);
         finish();
     }
 }
