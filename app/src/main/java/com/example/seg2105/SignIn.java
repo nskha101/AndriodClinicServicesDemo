@@ -14,6 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -56,6 +57,7 @@ public class SignIn extends AppCompatActivity {
 
     }
 
+
     public boolean infoChecker(final String currentUsername, final String currentPassword){
 
         String shaPassword = MainActivity.toSHA256 (currentPassword); //breaks signin
@@ -95,6 +97,7 @@ public class SignIn extends AppCompatActivity {
         String password = passwordEditable.getText().toString();
         boolean isUser = infoChecker(username, password);
 
+
         for (User u: users) {
             u.print();
         }
@@ -105,14 +108,16 @@ public class SignIn extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-            else{
+            else if(MainActivity.getUser().getRole().equals(("Employee"))){
                 Intent intent = new Intent(getApplicationContext(), EmployeeScreen.class);
                 startActivity(intent);
                 finish();
             }
-
-        }
-        else{
+            else{
+                Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+                startActivity(intent);
+                finish();
+            }
 
 
         }
