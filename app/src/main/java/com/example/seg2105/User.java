@@ -13,13 +13,25 @@ public class User {
     private Clinic clinic;
 
     public User( String username,String email, String password, String name, String familyName, String role){
+
         this.username = username;
         this.email = email;
         this.password = password;
         this.name = name;
         this.familyName = familyName;
         this.role = role;
-        this.clinic = null ;
+
+    }
+
+    public User( String username,String email, String password, String name, String familyName, String role, Clinic clinic){
+
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.familyName = familyName;
+        this.role = role;
+        this.clinic = clinic;
 
     }
 
