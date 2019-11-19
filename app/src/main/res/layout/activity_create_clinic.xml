@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateClinic">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Create Clinic"
+            android:textSize="38dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="410dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Clinic Name" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/clinicnamefield"
+                android:layout_width="404dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/createbutton"
+            android:layout_width="268dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="Create" />
+
+        <Space
+            android:layout_width="410dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
