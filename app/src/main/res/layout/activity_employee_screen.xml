@@ -13,16 +13,39 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Employee Controller"
+            android:textSize="30sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile Information" />
+            android:text="Profile Information"
+            android:textAllCaps="true" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="14dp" />
 
         <Button
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="View / Change" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Working Hours" />
 
         <Space
             android:layout_width="match_parent"
@@ -32,7 +55,8 @@
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Services  " />
+            android:text="Services  "
+            android:textAllCaps="true" />
 
         <Space
             android:layout_width="match_parent"
@@ -45,10 +69,6 @@
             android:onClick="goToAddEmployeeService"
             android:text="Add Services" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="14dp" />
-
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
@@ -58,17 +78,25 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="24dp" />
+            android:layout_height="14dp" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clinic Hours" />
+            android:text="Clinic"
+            android:textAllCaps="true" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="14dp" />
+
+        <Button
+            android:id="@+id/createclinic"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:onClick="goToCreateClinic"
+            android:text="Create Clinic" />
 
         <Button
             android:id="@+id/button4"
@@ -76,14 +104,5 @@
             android:layout_height="wrap_content"
             android:text="Clinic Working Hours" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Working Hours" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

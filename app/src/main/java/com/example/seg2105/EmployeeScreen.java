@@ -22,6 +22,12 @@ public class EmployeeScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToCreateClinic(View view){
+        Intent intent = new Intent(getApplicationContext(), CreateClinic.class);
+        startActivity(intent);
+        finish();
+    }
+
     /*public void goToClinicHours(View view){
         Intent intent = new Intent(getApplicationContext(), ClinicHours.class);
         startActivity(intent);
