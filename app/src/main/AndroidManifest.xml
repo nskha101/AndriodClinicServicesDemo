@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddEmployeeService"></activity>
+        <activity android:name=".EmployeeHours"></activity>
+        <activity android:name=".AddEmployeeService" />
         <activity android:name=".DeleteEmployeeService" />
         <activity android:name=".EmployeeScreen" />
         <activity android:name=".AddService" />
