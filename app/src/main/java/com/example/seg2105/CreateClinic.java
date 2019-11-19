@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CreateClinic extends AppCompatActivity {
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference serviceRef = database.getReference("users");
+    final DatabaseReference userRef = database.getReference("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +34,12 @@ public class CreateClinic extends AppCompatActivity {
 
         EditText clinicNameInput = (EditText) findViewById(R.id.clinicnamefield);
 
-        String clinicname = clinicNameInput.getText().toString();
+        String clinicName = clinicNameInput.getText().toString();
 
-        Clinic newclinic = new Clinic(clinicname);
 
         System.out.println(MainActivity.getUser().getUsername());
 
-        serviceRef.child(MainActivity.getUser().getUsername()).setValue(new User(MainActivity.getUser().getUsername(), MainActivity.getUser().getEmail(), MainActivity.getUser().getPassword(), MainActivity.getUser().getName(), MainActivity.getUser().getFamilyName(), MainActivity.getUser().getRole(), newclinic));
+        userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName));
+
     }
 }
