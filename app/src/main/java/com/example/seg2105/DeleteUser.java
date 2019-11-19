@@ -68,10 +68,10 @@ public class DeleteUser extends AppCompatActivity {
             }
         }
         if(worked){
-            errorMessageField.setText("User delete!");
+            errorMessageField.setText("User deleted!");
         }
         else{
-            errorMessageField.setText("Username not find!");
+            errorMessageField.setText("Username not found!");
         }
 
     }
