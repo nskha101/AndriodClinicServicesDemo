@@ -20,6 +20,7 @@ public class User {
         this.name = name;
         this.familyName = familyName;
         this.role = role;
+        this.clinic = new Clinic("void");;
 
     }
 

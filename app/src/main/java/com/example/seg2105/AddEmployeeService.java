@@ -78,7 +78,7 @@ public class AddEmployeeService extends AppCompatActivity {
                         Service serviceToAdd = services.get(buttonid);
                         TextView serviceAdded = findViewById(R.id.serviceAddedTextView);
                         userRef.child(MainActivity.getUser().getUsername()).child("userServices").child(serviceToAdd.getServiceName()).setValue(new Service(serviceToAdd.getServiceName(),serviceToAdd.getRate(),serviceToAdd.getEmployee()));
-                        serviceAdded.setText(serviceToAdd.getServiceName() + " had been added to your list of service");
+                        serviceAdded.setText(serviceToAdd.getServiceName() + " has been added to your list of services");
                     }
                 });
                 buttons.add(newBtn);
