@@ -26,6 +26,7 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="goToAddEmployeeService"
             android:text="Add Services" />
 
         <Space
@@ -36,6 +37,7 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="goToDeleteEmployeeService"
             android:text="Delete Services" />
 
         <Space

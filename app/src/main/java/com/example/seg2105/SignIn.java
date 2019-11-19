@@ -106,7 +106,7 @@ public class SignIn extends AppCompatActivity {
                 finish();
             }
             else{
-                Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+                Intent intent = new Intent(getApplicationContext(), EmployeeScreen.class);
                 startActivity(intent);
                 finish();
             }

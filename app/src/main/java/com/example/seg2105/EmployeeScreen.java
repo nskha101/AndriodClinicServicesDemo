@@ -22,7 +22,7 @@ public class EmployeeScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToClinicHours(View view){
+    /*public void goToClinicHours(View view){
         Intent intent = new Intent(getApplicationContext(), ClinicHours.class);
         startActivity(intent);
     }
@@ -30,5 +30,5 @@ public class EmployeeScreen extends AppCompatActivity {
     public void goToEmployeeHours(View view){
         Intent intent = new Intent(getApplicationContext(), EmployeeHours.class);
         startActivity(intent);
-    }
+    }*/
 }
