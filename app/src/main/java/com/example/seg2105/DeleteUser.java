@@ -38,6 +38,7 @@ public class DeleteUser extends AppCompatActivity {
                     User currentChild = child.getValue(User.class);
                     currentChild.print();
                     users.add(currentChild);
+                    System.out.println(users.size());
 
                 }
             }
@@ -48,7 +49,7 @@ public class DeleteUser extends AppCompatActivity {
             }
         });
 
-
+        System.out.println(users.size());
 
     }
     public void delete(View view){
