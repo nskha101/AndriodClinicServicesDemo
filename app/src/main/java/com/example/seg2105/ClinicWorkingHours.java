@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.w3c.dom.Text;
+
 public class ClinicWorkingHours extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -24,7 +26,7 @@ public class ClinicWorkingHours extends AppCompatActivity implements AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clinic_working_hours);
-        
+
         Spinner daySpinner = findViewById(R.id.daySpinner);
         Spinner startTimeSpinner = findViewById(R.id.startSpinner);
         Spinner endTimeSpinner = findViewById(R.id.endTimeSpinner);
@@ -47,17 +49,29 @@ public class ClinicWorkingHours extends AppCompatActivity implements AdapterView
 
     public void onClick(View view){
 
+        TextView errorTextView= findViewById(R.id.messageTextView);
 
-        TextView textview = (TextView) findViewById(R.id.messageTextView);
+        Spinner daySpinner = findViewById(R.id.daySpinner);
+        Spinner startTimeSpinner = findViewById(R.id.startSpinner);
+        Spinner endTimeSpinner = findViewById(R.id.endTimeSpinner);
 
-       /*for (int i=0; i<7; i++){
-            boolean checked = (list[i]).isChecked();
-            if (checked == true){
-                Hours hour = new Hours (list[i].toString(), starttime.toString(), endtime.toString() );
-                userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(MainActivity.getUser().getClinic().getClincName()).child(list[i].toString()).setValue(hour);
+        String dayString = daySpinner.getSelectedItem().toString();
+        String startString = startTimeSpinner.getSelectedItem().toString();
+        String endString = endTimeSpinner.getSelectedItem().toString();
 
-            }
-        }*/
+        
+        String startTime = startString.substring(0,1) + startString.substring(3,4);
+        int startInt = Integer.parseInt(startTime);
+        String endTime = startString.substring(0,1) + startString.substring(3,4);
+        int endInt = Integer.parseInt(endTime);
+
+        if(startInt >= endInt){
+            errorTextView.setText("You can't have a start time lower then end time!");
+        }
+        else{
+            userRef.child(MainActivity.getUser().getUsername()).child("clinic").setValue(new Hours(dayString,startString,endString));
+            errorTextView.setText("Time added to the list!");
+        }
     }
 
     @Override
