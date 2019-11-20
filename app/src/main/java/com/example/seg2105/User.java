@@ -10,7 +10,7 @@ public class User {
     private String name;
     private String familyName;
     private String role;
-    private String clinic;
+    private Clinic clinic;
 
     public User( String username,String email, String password, String name, String familyName, String role){
 
@@ -20,7 +20,19 @@ public class User {
         this.name = name;
         this.familyName = familyName;
         this.role = role;
-        this.clinic = null;
+        this.clinic=null;
+
+    }
+
+    public User( String username,String email, String password, String name, String familyName, String role, Clinic clinic){
+
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.familyName = familyName;
+        this.role = role;
+        this.clinic=clinic;
 
     }
 
@@ -53,11 +65,11 @@ public class User {
         return role;
     }
 
-    public void setClinic( String clinic){
+    public void setClinic( Clinic clinic){
         this.clinic=clinic;
     }
 
-    public String getClinic(){ return clinic;}
+    public Clinic getClinic(){ return clinic;}
 
 
     public void print(){

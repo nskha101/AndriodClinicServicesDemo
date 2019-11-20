@@ -51,12 +51,14 @@ public class ClinicWorkingHours extends AppCompatActivity {
             boolean checked = (list[i]).isChecked();
             if (checked == true){
                 Hours hour = new Hours (list[i].toString(), starttime.toString(), endtime.toString() );
-                userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(MainActivity.getUser().getClinic()).child(list[i].toString()).setValue(hour);
+                userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(MainActivity.getUser().getClinic().getClincName()).child(list[i].toString()).setValue(hour);
 
             }
         }
 
-       
+
+
+
 
 
     }
