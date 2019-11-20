@@ -68,7 +68,7 @@ public class ChangeEmployeeInfo extends AppCompatActivity{
 
             Toast.makeText(ChangeEmployeeInfo.this, "Invalid Clinic name", Toast.LENGTH_LONG).show();
         } else {
-            UserRef.child(MainActivity.getUser().getUsername()).setValue(new Clinic(name, address, phonenum, insurance, payment));
+            UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child("clinicName").setValue(new Clinic(name, address, phonenum, insurance, payment));
             finish();
         }
     }
