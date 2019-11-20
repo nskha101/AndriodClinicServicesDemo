@@ -6,20 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".DeleteEmployeeService">
 
-    <ScrollView
-        android:id="@+id/scollViewEmplyee"
-        android:layout_width="410dp"
-        android:layout_height="361dp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="91dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
-            android:id="@+id/linearLayoutEmplyee"
+        <TextView
+            android:id="@+id/deleteServiceEmployeeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:gravity="center"
+            android:text="Delete Services Employee"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/deleteServiceEmployeeMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <ScrollView
+            android:id="@+id/scrollViewDelete"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="136dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutDeleteEmplyoee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+
+        <EditText
+            android:id="@+id/deleteField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Service to be deleted"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/deleteEmployeeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Delete" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
