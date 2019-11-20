@@ -47,6 +47,12 @@
             android:gravity="center"
             android:inputType="textPersonName" />
 
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
         <Space
             android:layout_width="410dp"
             android:layout_height="100dp"
