@@ -53,7 +53,6 @@ public class CreateClinic extends AppCompatActivity {
         Toast.makeText(CreateClinic.this, "Invalid Clinic name",
                 Toast.LENGTH_LONG).show();
     }
-        System.out.println(MainActivity.getUser().getUsername());
 
         userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName));
 

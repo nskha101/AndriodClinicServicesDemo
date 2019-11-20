@@ -32,4 +32,9 @@ public class EmployeeScreen extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), EmployeeHours.class);
         startActivity(intent);
     }
+
+    public void goToClinicHours(View view){
+        Intent intent = new Intent(getApplicationContext(), ClinicWorkingHours.class);
+        startActivity(intent);
+    }
 }
