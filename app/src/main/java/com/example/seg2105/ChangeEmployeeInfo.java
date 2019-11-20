@@ -6,9 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ChangeEmployeeInfo extends AppCompatActivity{
 
@@ -49,45 +53,56 @@ public class ChangeEmployeeInfo extends AppCompatActivity{
 
         String name = clinicnametextfield.getText().toString();
         String address = clinicaddresstextfield.getText().toString();
-        String phoneNum = clinicphonenumfield.getText().toString();
+        String phonenum = clinicphonenumfield.getText().toString();
         String insurance = insurancetypestextfield.getText().toString();
         String payment = paymenttypestextfeild.getText().toString();
 
 
-//test
-        if (!validate(name, address, insurance, payment)){
+
+        if (!validate(phonenum, address, name, insurance, payment)){
             clinicnametextfield.setText("");
             clinicaddresstextfield.setText("");
             clinicphonenumfield.setText("");
             insurancetypestextfield.setText("");
             paymenttypestextfeild.setText("");
 
-            errorView.setText("Please fill out all required information");
-
+            Toast.makeText(ChangeEmployeeInfo.this, "Invalid Clinic name", Toast.LENGTH_LONG).show();
         } else {
-            UserRef.child(MainActivity.getUser().getUsername()).setValue(new Clinic(name, address, phoneNum, insurance, payment));
+            UserRef.child(MainActivity.getUser().getUsername()).setValue(new Clinic(name, address, phonenum, insurance, payment));
             finish();
         }
     }
 
 
 
-    private boolean validate(String n, String a, String i, String s){
-        if (n.equals("")) {
-            return false;
-        }
-        if (a.equals("")) {
-            return false;
-        }
-        if (i.equals("")) {
-            return false;
-        }
-        if (s.equals("")) {
-            return false;
-        }
-        return true;
+    public static final Pattern VALID_PHONENUM  = Pattern.compile("^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$\n", Pattern.CASE_INSENSITIVE);
+    public static final Pattern VALID_ADDRESS_REGEX = Pattern.compile("[A-Za-z0-9'\\.\\-\\s\\,]", Pattern.CASE_INSENSITIVE);
+    public static final Pattern VALID_NAME_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
+
+    public static boolean validatephonenum(String phonenum) {
+        Matcher matcher = VALID_PHONENUM.matcher(phonenum);
+        return matcher.find();
+    }
+
+    public static boolean validateaddress(String address) {
+        Matcher matcher = VALID_ADDRESS_REGEX.matcher(address);
+        return matcher.find();
+    }
+
+    public static boolean validatename(String name) {
+        Matcher matcher = VALID_NAME_REGEX.matcher(name);
+        return matcher.find();
+    }
+
+
+
+    public boolean validate(String phonenum, String address, String name, String insurance, String payment) {
+        return validatephonenum(phonenum) && validateaddress(address) && validatename(name) && insurance != "" && payment != "";
+
     }
 
 
 
 }
+
+
