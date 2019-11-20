@@ -22,7 +22,7 @@
 
                 <TextView
                     android:id="@+id/textView35"
-                    android:layout_width="211dp"
+                    android:layout_width="133dp"
                     android:layout_height="50dp"
                     android:gravity="center"
                     android:text="Monday" />
@@ -33,6 +33,18 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="hours" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hoursend" />
 
             </TableRow>
 
@@ -53,6 +65,18 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="hours" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hoursend" />
             </TableRow>
 
             <TableRow
@@ -68,10 +92,22 @@
 
                 <TextView
                     android:id="@+id/wednesdayHours"
-                    android:layout_width="195dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="hours" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hoursend" />
             </TableRow>
 
             <TableRow
@@ -91,6 +127,18 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="hours" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hoursend" />
             </TableRow>
 
             <TableRow
@@ -110,6 +158,18 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Hours" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hoursend" />
             </TableRow>
         </TableLayout>
 

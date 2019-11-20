@@ -4,12 +4,12 @@ import java.sql.Time;
 
 public class Hours {
     private String day;
-    private Time startTime;
-    private Time endTime;
+    private String startTime;
+    private String endTime;
 
     public Hours(){}
 
-    public Hours(String day, Time startTime, Time endTime){
+    public Hours(String day, String startTime, String endTime){
 
         this.day=day;
         this.startTime=startTime;
@@ -20,10 +20,10 @@ public class Hours {
     public String getDay(){
         return day;
     }
-    public Time getTimefrom(){
+    public String getTimefrom(){
         return startTime;
     }
-    public Time getTimeto(){
+    public String getTimeto(){
         return endTime;
     }
 }
