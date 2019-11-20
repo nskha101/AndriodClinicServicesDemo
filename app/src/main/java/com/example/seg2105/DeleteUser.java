@@ -38,6 +38,7 @@ public class DeleteUser extends AppCompatActivity {
                     User currentChild = child.getValue(User.class);
                     currentChild.print();
                     users.add(currentChild);
+                    System.out.println(users.size());
 
                 }
             }
@@ -48,7 +49,7 @@ public class DeleteUser extends AppCompatActivity {
             }
         });
 
-
+        System.out.println(users.size());
 
     }
     public void delete(View view){
@@ -68,10 +69,10 @@ public class DeleteUser extends AppCompatActivity {
             }
         }
         if(worked){
-            errorMessageField.setText("User delete!");
+            errorMessageField.setText("User deleted!");
         }
         else{
-            errorMessageField.setText("Username not find!");
+            errorMessageField.setText("Username not found!");
         }
 
     }

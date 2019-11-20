@@ -10,14 +10,30 @@ public class User {
     private String name;
     private String familyName;
     private String role;
+    private Clinic clinic;
 
     public User( String username,String email, String password, String name, String familyName, String role){
+
         this.username = username;
         this.email = email;
         this.password = password;
         this.name = name;
         this.familyName = familyName;
         this.role = role;
+        this.clinic = new Clinic("void");;
+
+    }
+
+    public User( String username,String email, String password, String name, String familyName, String role, Clinic clinic){
+
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.familyName = familyName;
+        this.role = role;
+        this.clinic = clinic;
+
     }
 
 
@@ -47,6 +63,11 @@ public class User {
 
     public String getRole(){
         return role;
+    }
+
+    public Clinic setClinic(Clinic clinic){
+        this.clinic=clinic;
+        return clinic;
     }
 
     public void print(){

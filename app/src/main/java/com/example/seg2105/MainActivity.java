@@ -3,6 +3,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.math.BigInteger;
@@ -25,8 +28,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        Button userButton = (Button) findViewById(R.id.userPageButton);
+        TextView userTextView = (TextView) findViewById(R.id.userTag);
+
+        if(userInstance == null){
+            userTextView.setText("you are not sign in!");
+        }
+        else if(userInstance.getRole().equals("Admin")){
+            userTextView.setText("you are sign in as a Admin");
+            userButton.setText("Admin Page");
+        }
+        else if(userInstance.getRole().equals("Employee")){
+            userTextView.setText("you are sign in as a Employee");
+            userButton.setText("Employee Page");
+        }
+        else if(userInstance.getRole().equals("Patient")){
+            userTextView.setText("you are sign in as a Patient");
+            userButton.setText("Patient Page");
+        }
+
+    }
 
     public static String toSHA256(String password){
         try {
@@ -66,5 +94,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void userPage(View view){
+        if(MainActivity.getUser() == null){
+
+        }
+        else if(MainActivity.getUser().getRole().equals("Admin")){
+            Intent intent = new Intent(getApplicationContext(), AdminScreen.class);
+            startActivity(intent);
+        }
+        else if(MainActivity.getUser().getRole().equals(("Employee"))){
+            Intent intent = new Intent(getApplicationContext(), EmployeeScreen.class);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
+            startActivity(intent);
+        }
+
+
+    }
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".EmployeeEditHours">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,42 +12,44 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/userTag"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="You are not sing in" />
-
-        <Button
-            android:id="@+id/signInButtonMain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="goToSignIn"
-            android:text="Sign In" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Day" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="83dp" />
+            android:layout_height="22dp" />
 
-        <Button
-            android:id="@+id/SignUpButtonMain"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:onClick="goToSignUp"
-            android:text="Sign Up" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Hours" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="83dp" />
+            android:layout_height="19dp" />
 
         <Button
-            android:id="@+id/userPageButton"
+            android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="userPage"
-            android:text="Not Sign In" />
+            android:text="Change my Hours" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back to My Hours" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
