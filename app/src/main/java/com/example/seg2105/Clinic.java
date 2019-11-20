@@ -2,13 +2,21 @@ package com.example.seg2105;
 
 public class Clinic {
     private String clinicName;
+    private String clinicAdress;
+    private String clinicPhoneNum;
+    private String clinicInsurance;
+    private String clinicPayment;
 
 
     public Clinic (){
     }
 
-    public Clinic (String clinicName){
+    public Clinic (String clinicName, String clinicAdress, String clinicPhoneNum, String clinicInsurance, String clinicPayment){
        this.clinicName=clinicName;
+       this.clinicAdress=clinicAdress;
+       this.clinicPhoneNum=clinicPhoneNum;
+       this.clinicInsurance=clinicInsurance;
+       this.clinicPayment=clinicPayment;
     }
 
     public String getClincName(){

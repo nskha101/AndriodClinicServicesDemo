@@ -35,35 +35,34 @@ public class ChangeEmployeeInfo extends AppCompatActivity{
     }
 
     public void onClick(View view) {
-//        //fields to make: String username,String email, String password, String name, String familyName
-//        EditText clinicnametextfield = findViewById(R.id.clinicNameTextView);
-//        EditText clinicaddresstextfield = findViewById(R.id.clinicAddressTextView);
-//        EditText insurancetypestextfield = findViewById(R.id.insuranceTextView); //convert to sha256
-//        EditText paymenttypestextfeild = findViewById(R.id.paymentTextView);
-//        Spinner roleSpinner = findViewById(R.id.roleSpinner);
-//        TextView errorView = findViewById(R.id.ErrorView);
-//
-//        //add radiobutton functionality for patient/employee pick (if patient radiobutton is picked, make role string = Patient, etc
-//
-//        String name = clinicnametextfield.getText().toString();
-//        String address = clinicaddresstextfield.getText().toString();
-//        String insurance = insurancetypestextfield.getText().toString();
-//        String payment = paymenttypestextfeild.getText().toString();
-//
-//
-////test
-//        if (!validate(name, address, insurance, payment)){
-//            clinicnametextfield.setText("");
-//            clinicaddresstextfield.setText("");
-//            insurancetypestextfield.setText("");
-//            paymenttypestextfeild.setText("");
-//
-//            errorView.setText("Please fill out all required information");
-//
-//        } else {
-//            UserRef.child(username).setValue(new User(username, email, password, name, familyName, patientorEmployee));
-//            finish();
-//        }
+        //fields to make: String username,String email, String password, String name, String familyName
+        EditText clinicnametextfield = findViewById(R.id.clinicNameTextView);
+        EditText clinicaddresstextfield = findViewById(R.id.clinicAddressTextView);
+        EditText insurancetypestextfield = findViewById(R.id.insuranceTextView); //convert to sha256
+        EditText paymenttypestextfeild = findViewById(R.id.paymentTextView);
+
+
+        //add radiobutton functionality for patient/employee pick (if patient radiobutton is picked, make role string = Patient, etc
+
+        String name = clinicnametextfield.getText().toString();
+        String address = clinicaddresstextfield.getText().toString();
+        String insurance = insurancetypestextfield.getText().toString();
+        String payment = paymenttypestextfeild.getText().toString();
+
+
+//test
+        if (!validate(name, address, insurance, payment)){
+            clinicnametextfield.setText("");
+            clinicaddresstextfield.setText("");
+            insurancetypestextfield.setText("");
+            paymenttypestextfeild.setText("");
+
+            errorView.setText("Please fill out all required information");
+
+        } else {
+            UserRef.child(MainActivity.getUser().getUsername()).setValue(new User(username, email, password, name, familyName, patientorEmployee));
+            finish();
+        }
     }
 
 
