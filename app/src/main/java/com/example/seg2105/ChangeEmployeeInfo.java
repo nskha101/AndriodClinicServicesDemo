@@ -2,12 +2,9 @@ package com.example.seg2105;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,6 +20,18 @@ public class ChangeEmployeeInfo extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clinic_info_screen);
+
+        EditText clinicnametextfield = findViewById(R.id.clinicNameEditText);
+        EditText clinicaddresstextfield = findViewById(R.id.clinicAddressEditText);
+        EditText phonenumtextfield = findViewById(R.id.phoneNumberEditText);
+        EditText insurancetypestextfield = findViewById(R.id.insuranceEditText); //convert to sha256
+        EditText paymenttypestextfeild = findViewById(R.id.paymentEditText);
+
+        clinicnametextfield.setText("");
+        clinicaddresstextfield.setText("");
+        phonenumtextfield.setText("");
+        insurancetypestextfield.setText("");
+        paymenttypestextfeild.setText("");
     }
 
     public void onClick(View view) {
