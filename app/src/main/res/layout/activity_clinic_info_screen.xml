@@ -17,7 +17,7 @@
             android:gravity="center"
             android:text="Clinic Info"
             app:layout_constraintTop_toTopOf="parent"
-            tools:textSize="36" />
+            tools:textSize="36dp" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -26,6 +26,12 @@
             android:layout_marginTop="250dp"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/errorView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
 
             <TextView
                 android:id="@+id/textView38"
@@ -68,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Payment Types"
+                android:text="Phone Number"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
