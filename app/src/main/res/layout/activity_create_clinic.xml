@@ -25,40 +25,32 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="120dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="410dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Clinic Name" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Clinic Name" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
+        <EditText
+            android:id="@+id/clinicnamefield"
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/clinicnamefield"
-                android:layout_width="404dp"
-                android:layout_height="58dp"
-                android:layout_gravity="center"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="textPersonName" />
-        </LinearLayout>
+        <Space
+            android:layout_width="410dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal" />
 
         <Button
             android:id="@+id/createbutton"
@@ -69,9 +61,5 @@
             android:onClick="onClick"
             android:text="Create" />
 
-        <Space
-            android:layout_width="410dp"
-            android:layout_height="43dp"
-            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
