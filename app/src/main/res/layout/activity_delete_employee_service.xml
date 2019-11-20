@@ -10,8 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="91dp"
-        android:gravity="center|top"
+        android:gravity="top"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +36,8 @@
         <ScrollView
             android:id="@+id/scrollViewDelete"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="136dp">
+            android:layout_height="190dp"
+            android:layout_marginTop="0dp">
 
             <LinearLayout
                 android:id="@+id/linearLayoutDeleteEmplyoee"
