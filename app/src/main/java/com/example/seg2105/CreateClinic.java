@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,18 +29,23 @@ public class CreateClinic extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        //hello
-        /*Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
-        startActivity(intent);*/
+        TextView textview = (TextView)  findViewById(R.id.confirm);
+    if (MainActivity.getUser().getClinic()==null){
 
         EditText clinicNameInput = (EditText) findViewById(R.id.clinicnamefield);
 
         String clinicName = clinicNameInput.getText().toString();
 
+        MainActivity.getUser().setClinic(clinicName);
 
-        System.out.println(MainActivity.getUser().getUsername());
+        userRef.child(MainActivity.getUser().getUsername()).child("clinicName").setValue(clinicName);
 
-        userRef.child(MainActivity.getUser().getUsername()).child(clinicName).setValue(clinicName);
+        textview.setText("Clinic Created");
+    }
+
+    else{
+        textview.setText("Clinic Already Exists");
+    }
 
        // userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName));
 
