@@ -25,122 +25,104 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25sp" />
+            android:layout_height="25dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="238dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <Space
-                android:layout_width="42dp"
-                android:layout_height="116dp"
-                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/mondayLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24sp" />
 
-            <LinearLayout
-                android:layout_width="373dp"
-                android:layout_height="240dp"
-                android:orientation="vertical">
+            <TextView
+                android:id="@+id/tuesdayLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButton2"
-                    android:layout_width="338dp"
-                    android:layout_height="wrap_content"
-                    android:text="Monday" />
+            <TextView
+                android:id="@+id/wednesdayLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButton3"
-                    android:layout_width="341dp"
-                    android:layout_height="wrap_content"
-                    android:text="Tuesday" />
+            <TextView
+                android:id="@+id/tursdayLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButton4"
-                    android:layout_width="341dp"
-                    android:layout_height="wrap_content"
-                    android:text="Wednesday" />
+            <TextView
+                android:id="@+id/fridayLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24sp" />
+        </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/radioButton5"
-                    android:layout_width="341dp"
-                    android:layout_height="wrap_content"
-                    android:text="Thursday" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-                <RadioButton
-                    android:id="@+id/radioButton6"
-                    android:layout_width="337dp"
-                    android:layout_height="wrap_content"
-                    android:text="Friday" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/radioButton7"
-                    android:layout_width="336dp"
-                    android:layout_height="wrap_content"
-                    android:text="Saturday" />
+            <TextView
+                android:id="@+id/dayOfTheWeekLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Day of the week"
+                android:textSize="24sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButton8"
-                    android:layout_width="336dp"
-                    android:layout_height="wrap_content"
-                    android:text="Sunday" />
-            </LinearLayout>
+            <Spinner
+                android:id="@+id/daySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp" />
 
+            <TextView
+                android:id="@+id/startTimeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Start Time"
+                android:textSize="24sp" />
+
+            <Spinner
+                android:id="@+id/startSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp" />
+
+            <TextView
+                android:id="@+id/endTimeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="End Time"
+                android:textSize="24sp" />
+
+            <Spinner
+                android:id="@+id/endTimeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp" />
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="10sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="198dp"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="15sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <LinearLayout
-                android:layout_width="374dp"
-                android:layout_height="163dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/starttimelabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Start Time" />
-
-                <EditText
-                    android:id="@+id/starttime"
-                    android:layout_width="334dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15sp" />
-
-                <TextView
-                    android:id="@+id/endtimelabel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="End Time" />
-
-                <EditText
-                    android:id="@+id/endtime"
-                    android:layout_width="335dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-            </LinearLayout>
-        </LinearLayout>
-
         <TextView
-            android:id="@+id/textView44"
+            android:id="@+id/messageTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" />

@@ -5,4 +5,51 @@
         <item>Employee</item>
     </string-array>
 
+    <string-array name="dayOfTheWeek">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+
+    <string-array name="timeSlot">
+        <item>6h00</item>
+        <item>6h30</item>
+        <item>7h00</item>
+        <item>7h30</item>
+        <item>8h00</item>
+        <item>8h30</item>
+        <item>9h00</item>
+        <item>9h30</item>
+        <item>10h00</item>
+        <item>10h30</item>
+        <item>11h00</item>
+        <item>11h30</item>
+        <item>12h00</item>
+        <item>12h30</item>
+        <item>13h00</item>
+        <item>13h30</item>
+        <item>14h00</item>
+        <item>14h30</item>
+        <item>15h00</item>
+        <item>15h30</item>
+        <item>16h00</item>
+        <item>16h30</item>
+        <item>17h00</item>
+        <item>17h30</item>
+        <item>18h00</item>
+        <item>18h30</item>
+        <item>19h00</item>
+        <item>19h30</item>
+        <item>20h00</item>
+        <item>20h30</item>
+        <item>21h00</item>
+        <item>21h30</item>
+        <item>22h00</item>
+        <item>22h30</item>
+        <item>223h00</item>
+
+    </string-array>
+
 </resources>
