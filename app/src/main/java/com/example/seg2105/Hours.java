@@ -20,10 +20,13 @@ public class Hours {
     public String getDay(){
         return day;
     }
-    public String getTimefrom(){
+    public String getStartTime(){
         return startTime;
     }
-    public String getTimeto(){
+    public String getEndTime(){
         return endTime;
     }
+    public void setDay(String thisDay){ day=thisDay;}
+    public void setStartTime(String thisStart){startTime=thisStart;}
+    public void setEndTime(String thisEnd){endTime=thisEnd;}
 }
