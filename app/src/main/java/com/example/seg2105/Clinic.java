@@ -23,6 +23,15 @@ public class Clinic {
         return clinicName;
     }
 
+    public String getClinicAdress(){return  clinicPhoneNum;}
+
+    public String getClinicPhoneNum(){return  clinicPhoneNum;}
+
+    public String getClinicInsurance(){return  clinicInsurance;}
+
+    public String getClinicPayment(){return  clinicPayment;}
+
+
     public void print(){
         System.out.println("Clinic Name: "+clinicName);
     }

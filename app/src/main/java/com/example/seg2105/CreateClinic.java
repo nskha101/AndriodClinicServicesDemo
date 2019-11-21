@@ -45,11 +45,11 @@ public class CreateClinic extends AppCompatActivity {
 
         System.out.println(MainActivity.getUser().getUsername());
 
-        Clinic clinic = new Clinic(clinicName);
+        Clinic clinic = new Clinic(clinicName,"","","","");
 
         MainActivity.getUser().setClinic(clinic);
 
-        userRef.child(MainActivity.getUser().getUsername()).child("clinic").setValue(new Clinic (clinicName));
+        userRef.child(MainActivity.getUser().getUsername()).child("clinic").setValue(new Clinic (clinicName,"","","",""));
                 //child(clinicName).setValue(new Clinic(clinicName));
 
     }

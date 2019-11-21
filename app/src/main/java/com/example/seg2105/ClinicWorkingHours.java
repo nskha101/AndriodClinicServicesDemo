@@ -58,18 +58,29 @@ public class ClinicWorkingHours extends AppCompatActivity implements AdapterView
         String dayString = daySpinner.getSelectedItem().toString();
         String startString = startTimeSpinner.getSelectedItem().toString();
         String endString = endTimeSpinner.getSelectedItem().toString();
+        String startTime;
+        String endTime;
 
-        
-        String startTime = startString.substring(0,1) + startString.substring(3,4);
+        if(startString.length() == 3) {
+            startTime = startString.substring(0,0) + startString.substring(2, 3);
+        }
+        else{
+            startTime = startString.substring(0,1) + startString.substring(3, 4);
+        }
+        if(endString.length() == 3) {
+            endTime = endString.substring(0,0) + endString.substring(2, 3);
+        }
+        else{
+            endTime = endString.substring(0,1) + endString.substring(3, 4);
+        }
         int startInt = Integer.parseInt(startTime);
-        String endTime = startString.substring(0,1) + startString.substring(3,4);
         int endInt = Integer.parseInt(endTime);
 
         if(startInt >= endInt){
             errorTextView.setText("You can't have a start time lower then end time!");
         }
         else{
-            userRef.child(MainActivity.getUser().getUsername()).child("clinic").setValue(new Hours(dayString,startString,endString));
+            userRef.child(MainActivity.getUser().getUsername()).child("clinic").child("hours").child(dayString).setValue(new Hours(dayString,startString,endString));
             errorTextView.setText("Time added to the list!");
         }
     }
