@@ -27,6 +27,11 @@ public class EmployeeScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToChangeEmployeeInfo(View view){
+        Intent intent = new Intent(getApplicationContext(), ChangeEmployeeInfo.class);
+        startActivity(intent);
+    }
+
     public void goToEmployeeHours(View view){
         Intent intent = new Intent(getApplicationContext(), EmployeeHours.class);
         startActivity(intent);
