@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +22,7 @@ public class EmployeeScreen extends AppCompatActivity {
     final DatabaseReference userRef = database.getReference("users");
     final ArrayList<Clinic> clinic = new ArrayList<>();
     private static Clinic userClinic = new Clinic("","","","","");
+    private TextView errorText = findViewById(R.id.clinicLabel);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +46,23 @@ public class EmployeeScreen extends AppCompatActivity {
     }
 
     public void goToCreateClinic(View view){
-        Intent intent = new Intent(getApplicationContext(), CreateClinic.class);
-        startActivity(intent);
+        if(getUserClinic().getClinicName().equals("")){
+            Intent intent = new Intent(getApplicationContext(), CreateClinic.class);
+            startActivity(intent);
+        }
+        else{
+            errorText.setText("Clinic has already been created!");
+        }
+
     }
 
     public void goToChangeEmployeeInfo(View view){
         if(!getUserClinic().getClinicName().equals("")){
             Intent intent = new Intent(getApplicationContext(), ChangeEmployeeInfo.class);
             startActivity(intent);
+        }
+        else{
+            errorText.setText("Please create a clinic first");
         }
     }
 
@@ -64,6 +75,9 @@ public class EmployeeScreen extends AppCompatActivity {
         if(!getUserClinic().getClinicName().equals("")) {
             Intent intent = new Intent(getApplicationContext(), ClinicWorkingHours.class);
             startActivity(intent);
+        }
+        else{
+            errorText.setText("Please create a clinic first");
         }
     }
     public void getClinic(){
