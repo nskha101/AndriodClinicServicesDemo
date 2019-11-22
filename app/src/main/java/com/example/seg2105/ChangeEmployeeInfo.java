@@ -32,21 +32,15 @@ ChangeEmployeeInfo extends AppCompatActivity{
         EditText phonenumtextfield = findViewById(R.id.phoneNumberEditText);
         EditText insurancetypestextfield = findViewById(R.id.insuranceEditText); //convert to sha256
         EditText paymenttypestextfeild = findViewById(R.id.paymentEditText);
-        DatabaseReference clinic = UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child("clinicName");//I'm probably doing this wrong
 
-        if(clinic==null) {
-            clinicnametextfield.setText("");
-            clinicaddresstextfield.setText("");
-            phonenumtextfield.setText("");
-            insurancetypestextfield.setText("");
-            paymenttypestextfeild.setText("");
-        }else{
-            clinicnametextfield.setText("Need to replace");
-            clinicaddresstextfield.setText("these strings");
-            phonenumtextfield.setText("with the");
-            insurancetypestextfield.setText("clinic");
-            paymenttypestextfeild.setText("info");
-        }
+        Clinic clinic = EmployeeScreen.getUserClinic();
+
+        clinicnametextfield.setText(clinic.getClinicName());
+        clinicaddresstextfield.setText(clinic.getClinicAdress());
+        phonenumtextfield.setText(clinic.getClinicPhoneNum());
+        insurancetypestextfield.setText(clinic.getClinicInsurance());
+        paymenttypestextfeild.setText(clinic.getClinicPayment());
+
 
     }
 
@@ -71,25 +65,18 @@ ChangeEmployeeInfo extends AppCompatActivity{
 
 
         if (!validate(phonenum, address, name, insurance, payment)){
-            DatabaseReference clinic = UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child("clinicName");//Definitely doing it wrong lmao
-            if(clinic==null) {
-                clinicnametextfield.setText("");
-                clinicaddresstextfield.setText("");
-                clinicphonenumtextfield.setText("");
-                clinicinsurancetypestextfield.setText("");
-                clinicpaymenttypestextfeild.setText("");
-            }else{
-                clinicnametextfield.setText("Need to replace");
-                clinicaddresstextfield.setText("these strings");
-                clinicphonenumtextfield.setText("with the");
-                clinicinsurancetypestextfield.setText("clinic");
-                clinicpaymenttypestextfeild.setText("info");
-            }
+            Clinic clinic = EmployeeScreen.getUserClinic();
+            clinicaddresstextfield.setText(clinic.getClinicAdress());
+            clinicphonenumtextfield.setText(clinic.getClinicPhoneNum());
+            clinicinsurancetypestextfield.setText(clinic.getClinicInsurance());
+            clinicpaymenttypestextfeild.setText(clinic.getClinicPayment());
 
-            Toast.makeText(ChangeEmployeeInfo.this, "Invalid Clinic name", Toast.LENGTH_LONG).show();
+            Toast.makeText(ChangeEmployeeInfo.this, "One or more fields contain invalid data", Toast.LENGTH_LONG).show();
         } else {
-            UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child("clinicName").setValue(new Clinic(name, address, phonenum, insurance, payment));
+            UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child(EmployeeScreen.getUserClinic().getClinicName()).removeValue();
+            UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child(EmployeeScreen.getUserClinic().getClinicName()).setValue(new Clinic(name, address, phonenum, insurance, payment));
             finish();
+
         }
     }
 
@@ -109,15 +96,14 @@ ChangeEmployeeInfo extends AppCompatActivity{
         return matcher.find();
     }
 
-    public static boolean validatename(String name) {
-        Matcher matcher = VALID_NAME_REGEX.matcher(name);
-        return matcher.find();
+    public static boolean validatename(String name){
+        return !name.equals("");
     }
 
 
 
     public boolean validate(String phonenum, String address, String name, String insurance, String payment) {
-        return validatephonenum(phonenum) && validateaddress(address) && validatename(name) && insurance != "" && payment != "";
+        return phonenum !="" && address != "" && name != "" && insurance != "" && payment != "";
 
     }
 
