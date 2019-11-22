@@ -20,6 +20,12 @@
             android:text="Employee Controller"
             android:textSize="30sp" />
 
+        <TextView
+            android:id="@+id/clinicLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp" />
@@ -36,6 +42,13 @@
             android:layout_height="14dp" />
 
         <Button
+            android:id="@+id/createclinic"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:onClick="goToCreateClinic"
+            android:text="Create Clinic" />
+
+        <Button
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +59,6 @@
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="goToEmployeeHours"
             android:text="My Working Hours" />
 
         <Space
@@ -92,13 +104,6 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="14dp" />
-
-        <Button
-            android:id="@+id/createclinic"
-            android:layout_width="169dp"
-            android:layout_height="wrap_content"
-            android:onClick="goToCreateClinic"
-            android:text="Create Clinic" />
 
         <Button
             android:id="@+id/button4"

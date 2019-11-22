@@ -14,7 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ChangeEmployeeInfo extends AppCompatActivity{
+public class
+ChangeEmployeeInfo extends AppCompatActivity{
 
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();

@@ -19,17 +19,27 @@ public class Clinic {
        this.clinicPayment=clinicPayment;
     }
 
-    public String getClincName(){
+    public String getClinicName(){
         return clinicName;
     }
 
-    public String getClinicAdress(){return  clinicPhoneNum;}
+    public String getClinicAdress(){return  clinicAdress;}
 
     public String getClinicPhoneNum(){return  clinicPhoneNum;}
 
     public String getClinicInsurance(){return  clinicInsurance;}
 
     public String getClinicPayment(){return  clinicPayment;}
+
+    public void setClinicName(String name){clinicName = name;}
+
+    public void setClinicAdress(String adress){clinicAdress = adress;}
+
+    public void setClinicPhoneNum(String phoneNum){clinicPhoneNum = phoneNum;}
+
+    public void setClinicInsurance(String insurance){clinicInsurance = insurance;}
+
+    public void setClinicPayment(String payment){clinicPayment = payment;}
 
 
     public void print(){

@@ -59,7 +59,7 @@ public class ClinicWorkingHours extends AppCompatActivity implements AdapterView
     }
 
     public void getUserHours(){
-        userRef.child(MainActivity.getUser().getUsername()).child("clinic").child("hours").addValueEventListener(new ValueEventListener() {
+        userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(EmployeeScreen.getUserClinic().getClinicName()).child("hours").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //fet all the child of User
@@ -178,7 +178,7 @@ public class ClinicWorkingHours extends AppCompatActivity implements AdapterView
             errorTextView.setText("You can't have a start time bigger then end time!");
         }
         else{
-            userRef.child(MainActivity.getUser().getUsername()).child("clinic").child("hours").child(dayString).setValue(new Hours(dayString,startString,endString));
+            userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(EmployeeScreen.getUserClinic().getClinicName()).child("hours").child(dayString).setValue(new Hours(dayString,startString,endString));
             errorTextView.setText("Time added to the list!");
         }
         getUserHours();
