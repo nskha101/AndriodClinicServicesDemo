@@ -32,21 +32,31 @@ ChangeEmployeeInfo extends AppCompatActivity{
         EditText phonenumtextfield = findViewById(R.id.phoneNumberEditText);
         EditText insurancetypestextfield = findViewById(R.id.insuranceEditText); //convert to sha256
         EditText paymenttypestextfeild = findViewById(R.id.paymentEditText);
+        DatabaseReference clinic = UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child("clinicName");//I'm probably doing this wrong
 
-        clinicnametextfield.setText("");
-        clinicaddresstextfield.setText("");
-        phonenumtextfield.setText("");
-        insurancetypestextfield.setText("");
-        paymenttypestextfeild.setText("");
+        if(clinic==null) {
+            clinicnametextfield.setText("");
+            clinicaddresstextfield.setText("");
+            phonenumtextfield.setText("");
+            insurancetypestextfield.setText("");
+            paymenttypestextfeild.setText("");
+        }else{
+            clinicnametextfield.setText("Need to replace");
+            clinicaddresstextfield.setText("these strings");
+            phonenumtextfield.setText("with the");
+            insurancetypestextfield.setText("clinic");
+            paymenttypestextfeild.setText("info");
+        }
+
     }
 
     public void onClick(View view) {
         //fields to make: String username,String email, String password, String name, String familyName
         EditText clinicnametextfield = findViewById(R.id.clinicNameEditText);
         EditText clinicaddresstextfield = findViewById(R.id.clinicAddressEditText);
-        EditText clinicphonenumfield = findViewById(R.id.phoneNumberEditText);
-        EditText insurancetypestextfield = findViewById(R.id.insuranceEditText); //convert to sha256
-        EditText paymenttypestextfeild = findViewById(R.id.paymentEditText);
+        EditText clinicphonenumtextfield = findViewById(R.id.phoneNumberEditText);
+        EditText clinicinsurancetypestextfield = findViewById(R.id.insuranceEditText); //convert to sha256
+        EditText clinicpaymenttypestextfeild = findViewById(R.id.paymentEditText);
         TextView errorView = findViewById(R.id.errorView);
 
 
@@ -54,18 +64,27 @@ ChangeEmployeeInfo extends AppCompatActivity{
 
         String name = clinicnametextfield.getText().toString();
         String address = clinicaddresstextfield.getText().toString();
-        String phonenum = clinicphonenumfield.getText().toString();
-        String insurance = insurancetypestextfield.getText().toString();
-        String payment = paymenttypestextfeild.getText().toString();
+        String phonenum = clinicphonenumtextfield.getText().toString();
+        String insurance = clinicinsurancetypestextfield.getText().toString();
+        String payment = clinicpaymenttypestextfeild.getText().toString();
 
 
 
         if (!validate(phonenum, address, name, insurance, payment)){
-            clinicnametextfield.setText("");
-            clinicaddresstextfield.setText("");
-            clinicphonenumfield.setText("");
-            insurancetypestextfield.setText("");
-            paymenttypestextfeild.setText("");
+            DatabaseReference clinic = UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child("clinicName");//Definitely doing it wrong lmao
+            if(clinic==null) {
+                clinicnametextfield.setText("");
+                clinicaddresstextfield.setText("");
+                clinicphonenumtextfield.setText("");
+                clinicinsurancetypestextfield.setText("");
+                clinicpaymenttypestextfeild.setText("");
+            }else{
+                clinicnametextfield.setText("Need to replace");
+                clinicaddresstextfield.setText("these strings");
+                clinicphonenumtextfield.setText("with the");
+                clinicinsurancetypestextfield.setText("clinic");
+                clinicpaymenttypestextfeild.setText("info");
+            }
 
             Toast.makeText(ChangeEmployeeInfo.this, "Invalid Clinic name", Toast.LENGTH_LONG).show();
         } else {
