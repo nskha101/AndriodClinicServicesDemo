@@ -34,7 +34,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile Information"
+            android:text="Profile/Clinic Information"
             android:textAllCaps="true" />
 
         <Space
@@ -56,10 +56,11 @@
             android:text="View / Change" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Working Hours" />
+            android:onClick="goToClinicHours"
+            android:text="Clinic Working Hours" />
 
         <Space
             android:layout_width="match_parent"
@@ -89,28 +90,6 @@
             android:layout_height="wrap_content"
             android:onClick="goToDeleteEmployeeService"
             android:text="Delete Services" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="14dp" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Clinic"
-            android:textAllCaps="true" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="14dp" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="goToClinicHours"
-            android:text="Clinic Working Hours" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

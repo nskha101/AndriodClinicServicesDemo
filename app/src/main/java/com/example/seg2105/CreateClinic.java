@@ -49,24 +49,19 @@ public class CreateClinic extends AppCompatActivity {
 
         MainActivity.getUser().setClinic(clinic);
 
-        userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName,"","","",""));
+        if(!clinicName.equals("")){
+
+            userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName,"","","",""));
                 //child(clinicName).setValue(new Clinic(clinicName));
+        }
 
     }
-         /*   if(!validateClinc(clinicName)){
-        clinicNameInput.setText("");
-        Toast.makeText(CreateClinic.this, "Invalid Clinic name",
-                Toast.LENGTH_LONG).show();
-    }
 
-        userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName));
 
-}
-
-    public static boolean validateClinc(String clinicname) {
+    /*public static boolean validateClinc(String clinicname) {
         Matcher matcher = VALID_CLINIC_REGEX.matcher(clinicname);
         return matcher.find();
-    }
+    }*/
 
-          */
+
 }

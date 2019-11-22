@@ -75,7 +75,7 @@ public class EmployeeScreen extends AppCompatActivity {
 
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 for (DataSnapshot child : children) {
-                    
+
                     Clinic currentChild = child.getValue(Clinic.class);
                     clinic.add(currentChild);
                 }
