@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -31,37 +34,54 @@ public class CreateClinic extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.createbutton);
     }
 
-   // public static final Pattern VALID_CLINIC_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
+    // public static final Pattern VALID_CLINIC_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
 
     public void onClick(View view) {
         //hello
         /*Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
         startActivity(intent);*/
 
+
         EditText clinicNameInput = (EditText) findViewById(R.id.clinicnamefield);
 
-        String clinicName = clinicNameInput.getText().toString();
+        TextView message = (TextView) findViewById(R.id.confirm);
 
-
-        System.out.println(MainActivity.getUser().getUsername());
-
-        Clinic clinic = new Clinic(clinicName,"","","","");
-
-        MainActivity.getUser().setClinic(clinic);
-
-        if(!clinicName.equals("")){
-
-            userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName,"","","",""));
-                //child(clinicName).setValue(new Clinic(clinicName));
+        if (clinicNameInput.toString() == null){
+            message.setText("Please enter a clinic name");
         }
 
+        else{
+            String clinicName = clinicNameInput.getText().toString();
+
+
+            System.out.println(MainActivity.getUser().getUsername());
+
+            Clinic clinic = new Clinic(clinicName,"","","","");
+
+            MainActivity.getUser().setClinic(clinic);
+
+            userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName,"","","",""));
+
+            finish();
+        }
+
+        //child(clinicName).setValue(new Clinic(clinicName));
+
+    }
+         /*   if(!validateClinc(clinicName)){
+        clinicNameInput.setText("");
+        Toast.makeText(CreateClinic.this, "Invalid Clinic name",
+                Toast.LENGTH_LONG).show();
     }
 
+        userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName));
 
-    /*public static boolean validateClinc(String clinicname) {
+}
+
+    public static boolean validateClinc(String clinicname) {
         Matcher matcher = VALID_CLINIC_REGEX.matcher(clinicname);
         return matcher.find();
-    }*/
+    }
 
-
+          */
 }
