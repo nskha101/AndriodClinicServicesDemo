@@ -22,7 +22,6 @@ public class EmployeeScreen extends AppCompatActivity {
     final DatabaseReference userRef = database.getReference("users");
     final ArrayList<Clinic> clinic = new ArrayList<>();
     private static Clinic userClinic = new Clinic("","","","","");
-    private TextView errorText = findViewById(R.id.clinicLabel);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +45,7 @@ public class EmployeeScreen extends AppCompatActivity {
     }
 
     public void goToCreateClinic(View view){
+        TextView errorText = findViewById(R.id.clinicLabel);
         if(getUserClinic().getClinicName().equals("")){
             Intent intent = new Intent(getApplicationContext(), CreateClinic.class);
             startActivity(intent);
@@ -57,6 +57,7 @@ public class EmployeeScreen extends AppCompatActivity {
     }
 
     public void goToChangeEmployeeInfo(View view){
+        TextView errorText = findViewById(R.id.clinicLabel);
         if(!getUserClinic().getClinicName().equals("")){
             Intent intent = new Intent(getApplicationContext(), ChangeEmployeeInfo.class);
             startActivity(intent);
@@ -72,6 +73,7 @@ public class EmployeeScreen extends AppCompatActivity {
     }*/
 
     public void goToClinicHours(View view){
+        TextView errorText = findViewById(R.id.clinicLabel);
         if(!getUserClinic().getClinicName().equals("")) {
             Intent intent = new Intent(getApplicationContext(), ClinicWorkingHours.class);
             startActivity(intent);

@@ -34,7 +34,8 @@ public class CreateClinic extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.createbutton);
     }
 
-    // public static final Pattern VALID_CLINIC_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
+     public static final Pattern VALID_CLINIC_REGEX = Pattern.compile("^[\\p{L} .'-]+$", Pattern.CASE_INSENSITIVE);
+
 
     public void onClick(View view) {
         //hello
@@ -46,7 +47,9 @@ public class CreateClinic extends AppCompatActivity {
 
         TextView message = (TextView) findViewById(R.id.confirm);
 
-        if (clinicNameInput.toString() == null){
+        System.out.println(clinicNameInput.getText().toString());
+
+        if (/*validateClinc(clinicNameInput.getText().toString()) ||*/ clinicNameInput.getText().toString().equals("")) {
             message.setText("Please enter a clinic name");
         }
 
@@ -68,20 +71,12 @@ public class CreateClinic extends AppCompatActivity {
         //child(clinicName).setValue(new Clinic(clinicName));
 
     }
-         /*   if(!validateClinc(clinicName)){
-        clinicNameInput.setText("");
-        Toast.makeText(CreateClinic.this, "Invalid Clinic name",
-                Toast.LENGTH_LONG).show();
-    }
 
-        userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName));
-
-}
 
     public static boolean validateClinc(String clinicname) {
         Matcher matcher = VALID_CLINIC_REGEX.matcher(clinicname);
         return matcher.find();
     }
 
-          */
+
 }

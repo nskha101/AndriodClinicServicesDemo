@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/textView20"
-            android:layout_width="410dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Clinic Name" />
@@ -54,7 +54,7 @@
             android:gravity="center" />
 
         <Space
-            android:layout_width="410dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal" />
 
