@@ -53,13 +53,13 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
         String username = usernametextfield.getText().toString();
         String email = emailtextfield.getText().toString();
-        String password = passwordtextfeild.getText().toString();
+        String password;
         password = passwordtextfeild.getText().toString();
         String name = nametextfeild.getText().toString();
         String familyName = familyNametextfeild.getText().toString();
         String patientorEmployee = roleSpinner.getSelectedItem().toString();
 
-//test
+
         if (!validate(username, email, password, name, familyName)){
             usernametextfield.setText("");
             emailtextfield.setText("");
