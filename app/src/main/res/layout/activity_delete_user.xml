@@ -15,12 +15,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
         <TextView
+            android:textStyle="bold"
             android:id="@+id/deleteServiceText"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:gravity="center"
-            android:text="Delete Users"
+            android:text="Delete User"
+            android:textColor="#21618C"
             android:textSize="36sp" />
 
         <TextView
@@ -38,8 +44,14 @@
             android:layout_marginTop="96dp"
             android:layout_marginEnd="24dp"
 
+            android:gravity="center_horizontal"
+            android:hint="@string/usernameHint"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
 
         <Button
             android:id="@+id/deleteButtonDeleteService"
