@@ -31,32 +31,26 @@
                 android:layout_height="50sp"
                 tools:visibility="visible" />
 
-            <TextView
-                android:textColor="#3498DB"
-                android:id="@+id/textView39"
+            <Button
+                android:id="@+id/byHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Search for a clinic:" />
-
-            <EditText
-                android:id="@+id/searchBar"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
-
-            <Spinner
-                android:id="@+id/searchTypeSpinner"
-                android:layout_width="355dp"
-                android:layout_height="wrap_content" />
+                android:onClick="onByAddressClick"
+                android:text="Search by address" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/byWorkingHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onSearchClick"
-                android:text="@android:string/search_go" />
+                android:onClick="onByHoursClick"
+                android:text="Search by Working Hours" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onByServiceClick"
+                android:text="Search by Service" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
