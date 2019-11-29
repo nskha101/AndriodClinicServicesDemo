@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:textColor="#21618C"
             android:id="@+id/signupText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,21 +21,28 @@
             android:text="Sign Up"
             android:textSize="36sp" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Password need to be at least 6 characters long!"
-            android:textSize="18sp" />
+            android:textSize="12sp" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/ErrorView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/UsernameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,6 +59,7 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/passwordView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,6 +76,7 @@
             android:inputType="textPassword" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/nameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,6 +93,7 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/familyNameview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,6 +110,7 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/EmailView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,6 +127,7 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/PatientorEmployeeView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

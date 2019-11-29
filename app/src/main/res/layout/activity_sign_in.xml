@@ -23,13 +23,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/signInText"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:textColor="#21618C"/>
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="201dp"
             android:layout_height="260dp"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logowhite" />
 
         <EditText
             android:id="@+id/usernameID"

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         TextView userTextView = (TextView) findViewById(R.id.userTag);
 
         if(userInstance == null){
-            userTextView.setText("you are not sign in!");
+            userTextView.setText("you are not signed in");
         }
         else if(userInstance.getRole().equals("Admin")){
             userTextView.setText("you are sign in as a Admin");

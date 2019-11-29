@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:textColor="#21618C"
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,9 +22,10 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="22dp" />
+            android:layout_height="50dp" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/textView7"
             android:layout_width="213dp"
             android:layout_height="wrap_content"
@@ -42,6 +44,7 @@
             android:layout_height="24dp" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/textView9"
             android:layout_width="214dp"
             android:layout_height="20dp"
@@ -59,6 +62,7 @@
             android:layout_height="28dp" />
 
         <TextView
+            android:textColor="#3498DB"
             android:id="@+id/textView14"
             android:layout_width="212dp"
             android:layout_height="wrap_content"
