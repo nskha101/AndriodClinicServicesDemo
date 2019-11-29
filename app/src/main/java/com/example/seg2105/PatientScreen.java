@@ -39,6 +39,5 @@ public class PatientScreen extends AppCompatActivity{
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, searchTypeChoices);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roleSpinner.setAdapter(adapter);
-        roleSpinner.setOnItemSelectedListener(this);
     }
 }
