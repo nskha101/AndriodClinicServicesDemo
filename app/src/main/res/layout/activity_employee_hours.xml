@@ -9,11 +9,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <TableLayout
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="466dp"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:textColor="#21618C"
+            android:id="@+id/textView34"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Employee Hours"
+            android:textSize="30sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+        <TableLayout
+            android:layout_width="370dp"
+            android:layout_height="247dp"
             android:gravity="center">
 
             <TableRow
@@ -25,7 +43,8 @@
                     android:layout_width="133dp"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Monday" />
+                    android:text="Monday"
+                    android:textColor="#3498DB" />
 
                 <TextView
                     android:id="@+id/mondayHours"
@@ -57,7 +76,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Tuesday" />
+                    android:text="Tuesday"
+                    android:textColor="#3498DB" />
 
                 <TextView
                     android:id="@+id/tuesdayHours"
@@ -88,7 +108,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Wednesday" />
+                    android:text="Wednesday"
+                    android:textColor="#3498DB" />
 
                 <TextView
                     android:id="@+id/wednesdayHours"
@@ -119,7 +140,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Thursday" />
+                    android:text="Thursday"
+                    android:textColor="#3498DB" />
 
                 <TextView
                     android:id="@+id/thursdayhours"
@@ -150,14 +172,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Friday" />
+                    android:text="Friday"
+                    android:textColor="#3498DB" />
 
                 <TextView
                     android:id="@+id/fridayHours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Hours" />
+                    android:text="hours" />
 
                 <TextView
                     android:id="@+id/textView25"
@@ -173,16 +196,20 @@
             </TableRow>
         </TableLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="90dp" />
+
         <Button
             android:id="@+id/button6"
-            android:layout_width="match_parent"
+            android:layout_width="291dp"
             android:layout_height="wrap_content"
             android:onClick="goToEmployeeEditHours"
             android:text="Edit My Hours" />
 
         <Button
             android:id="@+id/button9"
-            android:layout_width="match_parent"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             android:onClick="goToEmployeeScreen"
             android:text="Back to Employee Page" />

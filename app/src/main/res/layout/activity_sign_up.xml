@@ -35,7 +35,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:textColor="#3498DB"
+            android:textColor="#EA4A4A "
             android:id="@+id/ErrorView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

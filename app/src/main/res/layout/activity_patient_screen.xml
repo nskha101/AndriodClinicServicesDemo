@@ -18,6 +18,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
+                android:textColor="#21618C"
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -31,24 +32,24 @@
                 tools:visibility="visible" />
 
             <TextView
+                android:textColor="#3498DB"
                 android:id="@+id/textView39"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Seach for a clinic:" />
+                android:text="Search for a clinic:" />
 
             <EditText
                 android:id="@+id/searchBar"
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
             <Spinner
                 android:id="@+id/searchTypeSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:entries="1" />
+                android:layout_width="355dp"
+                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/button5"

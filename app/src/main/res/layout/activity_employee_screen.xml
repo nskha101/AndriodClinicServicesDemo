@@ -9,9 +9,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
 
         <TextView
             android:id="@+id/textView18"
@@ -19,6 +23,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Employee Page"
+            android:textColor="#21618C"
             android:textSize="30sp" />
 
         <TextView
@@ -29,14 +34,15 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="60dp" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile/Clinic Information"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textColor="#3498DB" />
 
         <Space
             android:layout_width="match_parent"
@@ -65,14 +71,15 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="14dp" />
+            android:layout_height="35dp" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Services  "
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textColor="#3498DB" />
 
         <Space
             android:layout_width="match_parent"
