@@ -32,58 +32,49 @@ public class PatientScreen extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_screen);
-        Spinner searchTypeSpinner = findViewById(R.id.searchTypeSpinner);
-
-        ArrayList<String> searchTypeChoices = new ArrayList<>();
-        searchTypeChoices.add("Address");
-        searchTypeChoices.add("Working Hours");
-        searchTypeChoices.add("Services Provided");
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, searchTypeChoices);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        searchTypeSpinner.setAdapter(adapter);
     }
 
-    public void onSearchClick(View view){
-
-        EditText searchBar = findViewById(R.id.searchBar);
-        Spinner searchTypeSpinner = findViewById(R.id.searchTypeSpinner);
-
-        String search = searchBar.getText().toString();
-        String searchType = searchTypeSpinner.getSelectedItem().toString();
-
-        if (validate(search, searchType)){
-            //search for clinic, if found open activity with list of clinics that match search
-        }
-
+    public void onByAddressClick(View view){
+        Intent intent = new Intent(getApplicationContext(), SearchClinicByAddress.class);
+        startActivity(intent);
     }
 
-    public static final Pattern VALID_ADDRESS_REGEX = Pattern.compile("[A-Za-z0-9'\\.\\-\\s\\,]", Pattern.CASE_INSENSITIVE);
-
-
-    public boolean validate(String search, String searchType){
-        if (searchType == "Address"){
-            return validateAddress(search);
-        }else if (searchType == "Working Hours"){
-            return validateWorkingHours(search);
-        }else if(searchType == "Services Provided") {
-            return validateServicesProvided(search);
-        }else{
-            return false;
-        }
-
+    public void onByHoursClick(View view){
+        Intent intent = new Intent(getApplicationContext(), SearchClinicByWorkingHours.class);
+        startActivity(intent);
     }
 
-    private boolean validateAddress(String search){
-        Matcher matcher = VALID_ADDRESS_REGEX.matcher(search);
-        return matcher.find();
+    public void onByServiceClick(View view){
+        Intent intent = new Intent(getApplicationContext(), SearchClinicByService.class);
+        startActivity(intent);
     }
 
-    private boolean validateWorkingHours(String search){
-        return 69<420;
-    }
+//    public static final Pattern VALID_ADDRESS_REGEX = Pattern.compile("[A-Za-z0-9'\\.\\-\\s\\,]", Pattern.CASE_INSENSITIVE);
 
-    private boolean validateServicesProvided(String search){
-        return true;
-    }
+
+//    public boolean validate(String search, String searchType){
+//        if (searchType == "Address"){
+//            return validateAddress(search);
+//        }else if (searchType == "Working Hours"){
+//            return validateWorkingHours(search);
+//        }else if(searchType == "Services Provided") {
+//            return validateServicesProvided(search);
+//        }else{
+//            return false;
+//        }
+//
+//    }
+//
+//    private boolean validateAddress(String search){
+//        Matcher matcher = VALID_ADDRESS_REGEX.matcher(search);
+//        return matcher.find();
+//    }
+//
+//    private boolean validateWorkingHours(String search){
+//        return 69<420;
+//    }
+//
+//    private boolean validateServicesProvided(String search){
+//        return true;
+//    }
 }

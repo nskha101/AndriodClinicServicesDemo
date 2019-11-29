@@ -18,41 +18,52 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:textStyle="bold"
-                android:textColor="#21618C"
-                android:id="@+id/textView17"
+                android:id="@+id/textView39"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Patient Page"
-                android:textSize="30sp" />
+                android:text="Search By Address"
+                tools:textSize="30sp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
-                tools:visibility="visible" />
+                android:layout_height="70sp" />
 
-            <Button
-                android:id="@+id/byHours"
+            <TextView
+                android:id="@+id/textView42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onByAddressClick"
-                android:text="Search by address" />
+                android:text="Please enter a valid address" />
 
-            <Button
-                android:id="@+id/byWorkingHours"
+            <TextView
+                android:id="@+id/errorView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/addressEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onByHoursClick"
-                android:text="Search by Working Hours" />
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40sp" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onByServiceClick"
-                android:text="Search by Service" />
+                android:onClick="onSearchClick"
+                android:text="Search" />
 
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBackClick"
+                android:text="Back" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>
