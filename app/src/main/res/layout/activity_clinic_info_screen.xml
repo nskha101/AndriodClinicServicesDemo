@@ -9,23 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:gravity="center"
-            android:text="Clinic Info"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:textSize="36dp" />
-
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="250dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent">
+            tools:layout_editor_absoluteX="-46dp"
+            tools:layout_editor_absoluteY="216dp">
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:gravity="center"
+                android:text="Clinic Info"
+                tools:textSize="36dp" />
 
             <TextView
                 android:id="@+id/errorView"
