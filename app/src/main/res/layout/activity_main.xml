@@ -22,6 +22,7 @@
             app:srcCompat="@drawable/logo" />
 
         <TextView
+            android:textStyle="italic"
             android:id="@+id/userTag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

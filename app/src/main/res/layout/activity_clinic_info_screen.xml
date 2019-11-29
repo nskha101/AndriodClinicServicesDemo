@@ -18,12 +18,14 @@
             tools:layout_editor_absoluteY="216dp">
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/textView36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:text="Clinic Info"
+                android:textColor="#21618C"
                 tools:textSize="36dp" />
 
             <TextView
@@ -38,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Clinic Name"
+                android:textColor="#3498DB"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -47,8 +50,12 @@
                 android:layout_gravity="center"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Name"
+                android:inputType="textPersonName" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/textView40"
@@ -56,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Clinic Address"
+                android:textColor="#3498DB"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -65,8 +73,12 @@
                 android:layout_gravity="center"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Address"
+                android:inputType="textPersonName" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/textView45"
@@ -74,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Phone Number"
+                android:textColor="#3498DB"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -83,8 +96,12 @@
                 android:layout_gravity="center"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="+1 (123) - XXX - XXXX"
+                android:inputType="textPersonName" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/textView41"
@@ -92,6 +109,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Insurance Types"
+                android:textColor="#3498DB"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -101,8 +119,12 @@
                 android:layout_gravity="center"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Insurance"
+                android:inputType="textPersonName" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/textView43"
@@ -110,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Payment Types"
+                android:textColor="#3498DB"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
@@ -119,8 +142,12 @@
                 android:layout_gravity="center"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Payment"
+                android:inputType="textPersonName" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
             <Button
                 android:id="@+id/button8"

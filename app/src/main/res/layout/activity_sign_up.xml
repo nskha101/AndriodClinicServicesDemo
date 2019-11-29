@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:textStyle="bold|italic"
             android:textColor="#21618C"
             android:id="@+id/signupText"
             android:layout_width="match_parent"

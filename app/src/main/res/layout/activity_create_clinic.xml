@@ -13,9 +13,11 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="100dp" />
 
         <TextView
+            android:textStyle="bold"
+            android:textColor="#21618C"
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

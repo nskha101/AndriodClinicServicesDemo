@@ -13,19 +13,17 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="22dp" />
+            android:layout_height="90dp" />
 
         <TextView
+            android:textStyle="bold"
+            android:textColor="#21618C"
             android:id="@+id/textView40"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Clinic Hours"
-            android:textSize="35sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:textSize="40sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,16 +66,13 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
+                android:textColor="#3498DB"
                 android:id="@+id/dayOfTheWeekLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,6 +86,7 @@
                 android:layout_height="52dp" />
 
             <TextView
+                android:textColor="#3498DB"
                 android:id="@+id/startTimeLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,6 +100,7 @@
                 android:layout_height="52dp" />
 
             <TextView
+                android:textColor="#3498DB"
                 android:id="@+id/endTimeLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -126,6 +123,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
 
         <Button
             android:id="@+id/button8"

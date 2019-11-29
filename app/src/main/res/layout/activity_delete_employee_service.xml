@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="3dp"
-        android:gravity="top"
+        android:gravity="center_horizontal|top"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,13 +19,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
         <TextView
             android:id="@+id/deleteServiceEmployeeTitle"
-            android:layout_width="match_parent"
+            android:layout_width="363dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Delete Services Employee"
-            android:textSize="36sp" />
+            android:text="Delete Employee Service"
+            android:textColor="#21618C"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/deleteServiceEmployeeMessage"
@@ -36,7 +42,7 @@
         <ScrollView
             android:id="@+id/scrollViewDelete"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="100dp"
             android:layout_marginTop="0dp">
 
             <LinearLayout
@@ -50,17 +56,21 @@
 
         <EditText
             android:id="@+id/deleteField"
-            android:layout_width="match_parent"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
             android:gravity="center"
-            android:hint="Service to be deleted"
+            android:hint="Service Name"
             android:inputType="textPersonName" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
 
         <Button
             android:id="@+id/deleteEmployeeButton"
-            android:layout_width="match_parent"
+            android:layout_width="288dp"
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:text="Delete" />
