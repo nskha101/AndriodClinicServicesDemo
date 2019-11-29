@@ -109,9 +109,9 @@ public class SignIn extends AppCompatActivity {
                 finish();
             }
             else if(MainActivity.getUser().getRole().equals(("Employee"))){
-                Intent intent = new Intent(getApplicationContext(), EmployeeScreen.class);
+                Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);
                 startActivity(intent);
-                finish();
+               // finish();
             }
             else{
                 Intent intent = new Intent(getApplicationContext(), WelcomeScreen.class);

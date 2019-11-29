@@ -39,10 +39,26 @@
             android:layout_height="wrap_content"
             android:gravity="center" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:textStyle="italic"
+            android:textColor="#3498DB"
+            android:id="@+id/textView42"
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:text="Your Services:" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
         <ScrollView
             android:id="@+id/scrollViewDelete"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="360dp"
+            android:layout_height="144dp"
             android:layout_marginTop="0dp">
 
             <LinearLayout
@@ -61,12 +77,12 @@
             android:layout_gravity="center"
             android:ems="10"
             android:gravity="center"
-            android:hint="Service Name"
+            android:hint="Service to Delete"
             android:inputType="textPersonName" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="150dp" />
+            android:layout_height="100dp" />
 
         <Button
             android:id="@+id/deleteEmployeeButton"
