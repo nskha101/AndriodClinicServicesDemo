@@ -1,7 +1,9 @@
 package com.example.seg2105;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 
 import android.content.Intent;
@@ -16,8 +18,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.regex.Pattern;
 
@@ -26,6 +31,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference UserRef = database.getReference("users");
+    final ArrayList<User> users = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,47 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roleSpinner.setAdapter(adapter);
         roleSpinner.setOnItemSelectedListener(this);
+
+        /////////////////////////////////////////////////////////////////////////////
+
+        DatabaseReference user = database.getReference();
+
+        user.child("users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //fet all the child of User
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                for (DataSnapshot child: children) {
+
+                    User currentChild = child.getValue(User.class);
+                    currentChild.print();
+                    users.add(currentChild);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////
+
+    }
+
+    public boolean infoChecker(final String username){
+
+        TextView errorText = findViewById(R.id.errorView);
+
+        for (int i=0; i<users.size(); i++) {
+
+            if(users.get(i).getUsername().equals(username)){
+                return true;
+            }
+
+        }
+        return false;
 
     }
 
@@ -69,9 +116,14 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
             errorView.setText("Invalid Entry, please try again.");
 
         } else {
-            password = MainActivity.toSHA256(password);
-            UserRef.child(username).setValue(new User(username, email, password, name, familyName, patientorEmployee));
-            finish();
+            if (!infoChecker(username)){
+                password = MainActivity.toSHA256(password);
+                UserRef.child(username).setValue(new User(username, email, password, name, familyName, patientorEmployee));
+                finish();
+            }
+            else{
+                errorView.setText("Username Already Exists");
+            }
         }
     }
 
