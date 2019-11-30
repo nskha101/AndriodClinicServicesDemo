@@ -26,7 +26,7 @@ public class PatientScreen extends AppCompatActivity{
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference userRef = database.getReference("users");
     final ArrayList<Clinic> clinic = new ArrayList<>();
-    private static Clinic userClinic = new Clinic("","","","","");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
