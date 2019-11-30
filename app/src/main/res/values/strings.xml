@@ -6,5 +6,6 @@
     <string name="passwordHint">Password</string>
     <string name="buttonSignIn">Sign In</string>
     <string name="signInText">Sign In</string>
+    <string name="title_activity_patient_ranking_screen">PatientRankingScreen</string>
 
 </resources>
