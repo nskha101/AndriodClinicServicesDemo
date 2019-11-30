@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,13 +28,17 @@ public class EmployeeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_screen);
+
         getClinic();
+
     }
     @Override
     protected void onResume(){
         super.onResume();
         getClinic();
     }
+
+
 
     public void goToDeleteEmployeeService(View view){
         Intent intent = new Intent(getApplicationContext(), DeleteEmployeeService.class);
@@ -108,6 +113,11 @@ public class EmployeeScreen extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void goToClinicProfie(View view){
+        Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
+        startActivity(intent);
     }
 
     public static Clinic getUserClinic(){

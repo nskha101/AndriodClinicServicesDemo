@@ -100,5 +100,12 @@
             android:onClick="goToDeleteEmployeeService"
             android:text="Delete Services" />
 
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="126dp"
+            android:layout_height="wrap_content"
+            android:onClick="goToClinicProfie"
+            android:text="Profile Temp" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

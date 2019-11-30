@@ -7,6 +7,8 @@ public class Clinic {
     private String clinicInsurance;
     private String clinicPayment;
     private String creator;
+    private double rating;
+    private int waiting;
 
 
     public Clinic (){
@@ -18,6 +20,8 @@ public class Clinic {
        this.clinicPhoneNum=clinicPhoneNum;
        this.clinicInsurance=clinicInsurance;
        this.clinicPayment=clinicPayment;
+       this.rating=0;
+       this.waiting=0;
 
     }
 
@@ -28,6 +32,8 @@ public class Clinic {
         this.clinicInsurance=clinicInsurance;
         this.clinicPayment=clinicPayment;
         this.creator=creator;
+        this.rating=0;
+        this.waiting=0;
     }
 
     public String getClinicName(){
@@ -42,7 +48,11 @@ public class Clinic {
 
     public String getClinicPayment(){return  clinicPayment;}
 
+    public double getRating(){ return rating;}
+
     public String getCreator() { return creator;}
+
+    public int getWaiting(){return waiting;}
 
     public void setClinicName(String name){clinicName = name;}
 
