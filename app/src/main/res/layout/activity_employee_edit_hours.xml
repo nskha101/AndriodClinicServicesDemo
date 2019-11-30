@@ -70,6 +70,7 @@
             android:id="@+id/button10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="goToEmployeeHours"
             android:text="Back to My Hours" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
