@@ -20,6 +20,7 @@ ChangeEmployeeInfo extends AppCompatActivity{
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference UserRef = database.getReference("users");
+    final DatabaseReference Ref = database.getReference("clinics");
 
 
     @Override
@@ -74,7 +75,9 @@ ChangeEmployeeInfo extends AppCompatActivity{
             Toast.makeText(ChangeEmployeeInfo.this, "One or more fields contain invalid data", Toast.LENGTH_LONG).show();
         } else {
             UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child(EmployeeScreen.getUserClinic().getClinicName()).removeValue();
+            Ref.child(EmployeeScreen.getUserClinic().getClinicName()).removeValue();
             UserRef.child(MainActivity.getUser().getUsername()).child("clinic").child(name).setValue(new Clinic(name, address, phonenum, insurance, payment));
+            Ref.child(name).setValue(new Clinic (name,address,phonenum,insurance,payment, MainActivity.getUser().getUsername()));
             finish();
 
         }

@@ -42,6 +42,8 @@ public class Clinic {
 
     public String getClinicPayment(){return  clinicPayment;}
 
+    public String getCreator() { return creator;}
+
     public void setClinicName(String name){clinicName = name;}
 
     public void setClinicAdress(String adress){clinicAddress = adress;}

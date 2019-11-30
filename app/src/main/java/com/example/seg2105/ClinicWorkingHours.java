@@ -27,6 +27,7 @@ public class ClinicWorkingHours extends AppCompatActivity implements AdapterView
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference userRef = database.getReference("users");
+    final DatabaseReference Ref = database.getReference("clinics");
     final ArrayList<Hours> hours = new ArrayList<>();
 
 
@@ -179,6 +180,7 @@ public class ClinicWorkingHours extends AppCompatActivity implements AdapterView
         }
         else{
             userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(EmployeeScreen.getUserClinic().getClinicName()).child("hours").child(dayString).setValue(new Hours(dayString,startString,endString));
+            Ref.child(EmployeeScreen.getUserClinic().getClinicName()).child("hours").child(dayString).setValue(new Hours(dayString,startString,endString));
             errorTextView.setText("Time added to the list!");
         }
         getUserHours();
