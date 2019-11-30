@@ -21,6 +21,7 @@ public class CreateClinic extends AppCompatActivity {
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference userRef = database.getReference("users");
+    final DatabaseReference Ref = database.getReference("clinics");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +60,12 @@ public class CreateClinic extends AppCompatActivity {
 
             System.out.println(MainActivity.getUser().getUsername());
 
-            Clinic clinic = new Clinic(clinicName,"","","","");
+           // Clinic clinic = new Clinic(clinicName,"","","","");
 
-            MainActivity.getUser().setClinic(clinic);
+           // MainActivity.getUser().setClinic(clinic);
 
             userRef.child(MainActivity.getUser().getUsername()).child("clinic").child(clinicName).setValue(new Clinic (clinicName,"","","",""));
+            Ref.child(clinicName).setValue(new Clinic (clinicName,"","","","", MainActivity.getUser().getUsername()));
 
             finish();
         }
