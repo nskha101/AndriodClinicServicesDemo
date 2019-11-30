@@ -42,8 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="46dp"
             android:numStars="5"
-            android:progressTint="#3498DB "
-            android:progressBackgroundTint="#21618C"
+            android:progressTint="#21618C"
+            android:progressBackgroundTint="#3498DB "
             android:stepSize="0.25"/>/>
 
         <Space
@@ -143,9 +143,34 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="346dp"
+            android:layout_height="52dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="#3498DB"
+                android:id="@+id/textView59"
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Wait Time:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/waittime"
+                android:layout_width="46dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="13dp" />
 
         <TextView
             android:textColor="#3498DB"
@@ -170,11 +195,24 @@
             android:layout_width="match_parent"
             android:layout_height="15dp" />
 
-        <Button
-            android:id="@+id/button12"
-            android:layout_width="121dp"
-            android:layout_height="wrap_content"
-            android:text="Back" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:text="Register" />
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+        </LinearLayout>
 
 
     </LinearLayout>
