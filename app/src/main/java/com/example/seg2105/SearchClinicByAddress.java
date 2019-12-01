@@ -2,6 +2,7 @@ package com.example.seg2105;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ public class SearchClinicByAddress extends AppCompatActivity {
 
 
 
-    public void onSearchClick(){
+    public void onSearchClick(View view){
 
         EditText address = findViewById(R.id.addressEditText);
 
