@@ -32,6 +32,7 @@ public class SearchClinicByWorkingHours extends AppCompatActivity  implements Ad
     final ArrayList<Clinic> clinics = new ArrayList<>();
     final ArrayList<Pair> neededClinicsIndex = new ArrayList<>();
     final ArrayList<ArrayList<Hours>> hours = new ArrayList<>();
+    final Integer[] hoursIndex = new Integer[1];
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -77,6 +78,7 @@ public class SearchClinicByWorkingHours extends AppCompatActivity  implements Ad
 
                 }
                 hours.clear();
+                hoursIndex[0] = -1;
                 for(int i =0; i< clinics.size(); i++){
                     hours.add(new ArrayList<Hours>());
                     getAllhours(i);
@@ -104,11 +106,14 @@ public class SearchClinicByWorkingHours extends AppCompatActivity  implements Ad
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 System.out.println("Test3");
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                hoursIndex[0] = hoursIndex[0] +1;
+                System.out.println("hoursIndex:" + hoursIndex[0]);
                 for (DataSnapshot child: children) {
                     System.out.println("Test4");
                     Hours currentChild = child.getValue(Hours.class);
                     //currentChild.print();
-                    hours.get(hours.size()-1).add(currentChild);
+                    hours.get(hoursIndex[0]).add(currentChild);
+
 
                 }
 
@@ -123,7 +128,7 @@ public class SearchClinicByWorkingHours extends AppCompatActivity  implements Ad
 
     }
 
-    public void showClinic(){
+    public void clinicToShow(){
         Spinner daySpinner = findViewById(R.id.searchDaySpinner);
         Spinner startTimeSpinner = findViewById(R.id.startingHoursSpinner);
         Spinner endTimeSpinner = findViewById(R.id.endingHoursSpinner);
@@ -154,7 +159,7 @@ public class SearchClinicByWorkingHours extends AppCompatActivity  implements Ad
         Spinner daySpinner = findViewById(R.id.searchDaySpinner);
         String dayString = daySpinner.getSelectedItem().toString();
 
-        showClinic();
+        clinicToShow();
 
         /*for(int p = 0; p < neededClinicsIndex.size(); p++){
             System.out.println(clinics.get(neededClinicsIndex.get(p)));
