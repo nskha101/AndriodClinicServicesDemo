@@ -105,6 +105,9 @@ public class EmployeeScreen extends AppCompatActivity {
                 if(clinic.size() == 1) {
                     setUserClinic(clinic.get(0));
                 }
+                else{
+                    setUserClinic(new Clinic("","","","",""));
+                }
 
             }
             @Override

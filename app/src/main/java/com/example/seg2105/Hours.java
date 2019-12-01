@@ -29,4 +29,8 @@ public class Hours {
     public void setDay(String thisDay){ day=thisDay;}
     public void setStartTime(String thisStart){startTime=thisStart;}
     public void setEndTime(String thisEnd){endTime=thisEnd;}
+
+    public String toString(){
+        return "Day: "+ day + " Start Time: " + startTime +" End Time: " + endTime;
+    }
 }

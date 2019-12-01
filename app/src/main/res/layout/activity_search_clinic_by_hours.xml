@@ -14,49 +14,76 @@
             android:layout_marginTop="150dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView44"
+                android:id="@+id/searchByHoursTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Search By Clinic Hours"
                 android:textSize="30sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="70sp" />
-
-            <Spinner
-                android:id="@+id/daySpinner"
-                android:layout_width="200sp"
-                android:layout_height="wrap_content" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal" />
 
-                <Spinner
-                    android:id="@+id/startTimeSpinner"
+            <ScrollView
+                android:id="@+id/scrollLayoutSearchHours"
+                android:layout_width="match_parent"
+                android:layout_height="198dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:orientation="vertical" />
+            </ScrollView>
 
-                <Spinner
-                    android:id="@+id/endTimeSpinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/onSearchClick"
+            <TextView
+                android:id="@+id/searchHoursDayTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Day" />
+
+            <Spinner
+                android:id="@+id/searchDaySpinner"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/startingHoursTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Starting Hours" />
+
+            <Spinner
+                android:id="@+id/startingHoursSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/endHoursTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="End Hours" />
+
+            <Spinner
+                android:id="@+id/endingHoursSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onSearchClick"
                 android:text="Search" />
+
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

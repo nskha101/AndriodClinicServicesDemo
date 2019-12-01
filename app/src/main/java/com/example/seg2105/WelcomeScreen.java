@@ -50,7 +50,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
 
 
-      mainLayout=(ConstraintLayout)findViewById(R.id.mainLayout);
+        mainLayout=(ConstraintLayout)findViewById(R.id.mainLayout);
 
         mainLayout.setOnClickListener(new View.OnClickListener() {
 

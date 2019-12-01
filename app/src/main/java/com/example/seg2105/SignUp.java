@@ -156,7 +156,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
 
     public static boolean validatepatientorEmployee(String patientorEmployee) {
-        return ((patientorEmployee.equals("patient")) || (patientorEmployee.equals("employee")));
+        return ((patientorEmployee.equals("Patient")) || (patientorEmployee.equals("Employee")));
     }
 
     public boolean validate(String username, String email, String password, String name, String familyName) {
