@@ -8,63 +8,78 @@
     tools:context=".SignIn">
 
     <LinearLayout
-        android:layout_width="416dp"
-        android:layout_height="734dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <Space
-            android:layout_width="373dp"
-            android:layout_height="195dp" />
+            android:layout_width="match_parent"
+            android:layout_height="50sp" />
 
         <TextView
-            android:textStyle="bold"
             android:id="@+id/signInText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/signInText"
+            android:textColor="#21618C"
             android:textSize="36sp"
-            android:textColor="#21618C"/>
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15sp" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="201dp"
-            android:layout_height="260dp"
+            android:id="@+id/imageView4"
+            android:layout_width="236dp"
+            android:layout_height="190dp"
             app:srcCompat="@drawable/logowhite" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
 
         <EditText
             android:id="@+id/usernameID"
             android:layout_width="wrap_content"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/usernameHint"
             android:inputType="textPersonName" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
         <EditText
             android:id="@+id/passwordID"
             android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_marginBottom="108dp"
+            android:layout_height="wrap_content"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/passwordHint"
             android:inputType="textPassword" />
 
         <TextView
             android:id="@+id/errorText"
-            android:layout_width="212dp"
+            android:layout_width="match_parent"
             android:layout_height="21dp"
             android:gravity="center" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
         <Button
             android:id="@+id/signInButton"
-            android:layout_width="98dp"
-            android:layout_height="55dp"
+            android:layout_width="162dp"
+            android:layout_height="47dp"
             android:layout_marginBottom="184dp"
             android:onClick="onClickCheck"
             android:text="@string/buttonSignIn" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
