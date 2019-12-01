@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClinicProfile"></activity>
+        <activity android:name=".SeeAllClinic"></activity>
+        <activity android:name=".ClinicProfile" />
         <activity android:name=".SearchClinicByService" />
         <activity android:name=".PatientScreen" />
         <activity android:name=".SearchClinicByAddress" />

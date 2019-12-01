@@ -49,6 +49,11 @@ public class PatientScreen extends AppCompatActivity{
         startActivity(intent);
     }
 
+    public void onSeeAllClinic(View view){
+        Intent intent = new Intent(getApplicationContext(), SeeAllClinic.class);
+        startActivity(intent);
+    }
+
 //    public static final Pattern VALID_ADDRESS_REGEX = Pattern.compile("[A-Za-z0-9'\\.\\-\\s\\,]", Pattern.CASE_INSENSITIVE);
 
 

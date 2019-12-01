@@ -55,6 +55,13 @@
                 android:onClick="onByServiceClick"
                 android:text="Search by Service" />
 
+            <Button
+                android:id="@+id/seeAllClinicButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSeeAllClinic"
+                android:text="See all Clinics" />
+
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
