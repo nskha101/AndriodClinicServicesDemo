@@ -31,17 +31,20 @@ public class ClinicProfile extends AppCompatActivity {
         RatingBar ClinicRating = (RatingBar) findViewById(R.id.rate);
         RatingBar userRating = (RatingBar) findViewById(R.id.setrate);
 
+        TextView clinicname = findViewById(R.id.clinicname);
         TextView address = findViewById(R.id.address);
         TextView phonenumber = findViewById(R.id.phonenumber);
         TextView insurancetype = findViewById(R.id.insureancetype);
         TextView paymentmethod = findViewById(R.id.paymentmethod);
 
-        TextView clinicname = findViewById(R.id.clinicname);
-        Clinic clinicNamePlaceHolder = PatientScreen.getCurrentClinic();
+        Clinic clinic = PatientScreen.getCurrentClinic();
 
-        getClinicInfo();
-
-
+        clinicname.setText(clinic.getClinicName());
+        address.setText(clinic.getClinicAdress());
+        phonenumber.setText(clinic.getClinicPhoneNum());
+        insurancetype.setText(clinic.getClinicInsurance());
+        paymentmethod.setText(clinic.getClinicPayment());
+        ClinicRating.setNumStars(clinic.getNumrated());
 
     }
     private void getClinicInfo(){
