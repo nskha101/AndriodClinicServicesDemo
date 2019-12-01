@@ -180,7 +180,7 @@ public class SearchClinicByWorkingHours extends AppCompatActivity  implements Ad
                 @Override
                 public void onClick(View v) {
                     int buttonid = v.getId();
-                    Service serviceToAdd = services.get(buttonid);
+                    Service serviceToAdd = clinics.get(buttonid);
                     TextView serviceAdded = findViewById(R.id.serviceAddedTextView);
                     userRef.child(MainActivity.getUser().getUsername()).child("userServices").child(serviceToAdd.getServiceName()).setValue(new Service(serviceToAdd.getServiceName(),serviceToAdd.getRate(),serviceToAdd.getEmployee()));
 

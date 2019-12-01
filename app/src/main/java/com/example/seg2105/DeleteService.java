@@ -26,7 +26,7 @@ public class DeleteService extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_service);
 
-        servicesRef.child("services").addValueEventListener(new ValueEventListener() {
+        servicesRef.child("clinics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //fetch all the child of Services
@@ -57,7 +57,7 @@ public class DeleteService extends AppCompatActivity {
 
         for(int i = 0; i<services.size(); i++){
             if(services.get(i).getServiceName().equals(serviceDelete)){
-                servicesRef.child("services").child(services.get(i).getServiceName()).removeValue();
+                servicesRef.child("clinics").child(services.get(i).getServiceName()).removeValue();
                 serviceDeleteField.setText(" ");
                 worked = true;
 

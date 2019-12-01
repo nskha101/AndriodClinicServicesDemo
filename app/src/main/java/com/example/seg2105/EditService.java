@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class EditService extends AppCompatActivity {
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference serviceRef = database.getReference("services");
+    final DatabaseReference serviceRef = database.getReference("clinics");
     final ArrayList<Service> services = new ArrayList<>();
 
     @Override
@@ -40,7 +40,7 @@ public class EditService extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference userRef = database.getReference();
 
-        userRef.child("services").addValueEventListener(new ValueEventListener() {
+        userRef.child("clinics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //fet all the child of User

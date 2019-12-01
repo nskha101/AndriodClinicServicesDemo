@@ -9,6 +9,7 @@ public class Clinic {
     private String creator;
     private double rating;
     private int waiting;
+    private int numrated;
 
 
     public Clinic (){
@@ -22,6 +23,7 @@ public class Clinic {
        this.clinicPayment=clinicPayment;
        this.rating=0;
        this.waiting=0;
+       this.numrated = 0;
 
     }
 
@@ -34,6 +36,7 @@ public class Clinic {
         this.creator=creator;
         this.rating=0;
         this.waiting=0;
+        this.numrated = 0;
     }
 
     public String getClinicName(){
@@ -45,6 +48,14 @@ public class Clinic {
     public String getClinicPhoneNum(){return  clinicPhoneNum;}
 
     public String getClinicInsurance(){return  clinicInsurance;}
+
+    public int getNumrated() {
+        return numrated;
+    }
+
+    public void setNumrated(int numrated) {
+        this.numrated = numrated;
+    }
 
     public String getClinicPayment(){return  clinicPayment;}
 

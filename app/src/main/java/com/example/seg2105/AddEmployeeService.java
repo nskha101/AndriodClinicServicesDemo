@@ -39,7 +39,7 @@ public class AddEmployeeService extends AppCompatActivity {
     }
 
     public void getAllServices(){
-        servicesRef.child("services").addValueEventListener(new ValueEventListener() {
+        servicesRef.child("clinics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //fetch all the child of Services
@@ -78,7 +78,7 @@ public class AddEmployeeService extends AppCompatActivity {
                         Service serviceToAdd = services.get(buttonid);
                         TextView serviceAdded = findViewById(R.id.serviceAddedTextView);
                         userRef.child(MainActivity.getUser().getUsername()).child("userServices").child(serviceToAdd.getServiceName()).setValue(new Service(serviceToAdd.getServiceName(),serviceToAdd.getRate(),serviceToAdd.getEmployee()));
-                        serviceAdded.setText(serviceToAdd.getServiceName() + " has been added to your list of services");
+                        serviceAdded.setText(serviceToAdd.getServiceName() + " has been added to your list of clinics");
                     }
                 });
                 buttons.add(newBtn);

@@ -19,7 +19,7 @@
         <TextView
             android:textStyle="bold"
             android:textColor="#21618C"
-            android:id="@+id/textView47"
+            android:id="@+id/clinicname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clinic Name"
@@ -69,7 +69,6 @@
                 android:layout_width="133dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -92,7 +91,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -115,7 +113,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -138,7 +135,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -163,7 +159,6 @@
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView"
                 android:textSize="20sp" />
 
         </LinearLayout>
