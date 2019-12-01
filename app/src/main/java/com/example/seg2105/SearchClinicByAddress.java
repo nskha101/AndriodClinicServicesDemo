@@ -37,12 +37,19 @@ public class SearchClinicByAddress extends AppCompatActivity {
 
     public void onSearchClick(View view){
 
-        EditText address = findViewById(R.id.addressEditText);
+        EditText addressEditText = findViewById(R.id.addressEditText);
+
+        String address = addressEditText.getText().toString();
+
+        System.out.println("input:  "+address);
 
         boolean found = false;
 
         for (Clinic clinic:clinics){
+            System.out.println("compared to: "+ clinic.getClinicAdress());
             if (clinic.getClinicAdress().equals(address)){
+                System.out.println("found");
+
                 found = true;
                 PatientScreen.setCurrentCinic(clinic);
                 Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
