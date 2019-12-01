@@ -43,6 +43,7 @@ public class SearchClinicByAddress extends AppCompatActivity {
 
         for (Clinic clinic:clinics){
             if (clinic.getClinicAdress().equals(address)){
+                found = true;
                 PatientScreen.setCurrentCinic(clinic);
                 Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
                 startActivity(intent);
