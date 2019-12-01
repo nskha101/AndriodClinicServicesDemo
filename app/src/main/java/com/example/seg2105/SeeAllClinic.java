@@ -3,7 +3,9 @@ package com.example.seg2105;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -20,8 +22,10 @@ import java.util.ArrayList;
 public class SeeAllClinic extends AppCompatActivity {
 
     final ArrayList<Clinic> clinics = new ArrayList<>();
+    ArrayList<Button> buttons = new ArrayList<>();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference clinicRef = database.getReference().child("clinics");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,20 +66,23 @@ public class SeeAllClinic extends AppCompatActivity {
             newBtn.setText("Name: " + clinics.get(i).getClinicName() + "\r\nAddress: " + clinics.get(i).getClinicAdress() + "\nPhone number: " + clinics.get(i).getClinicPhoneNum());
             newBtn.setId(i);
             System.out.println(newBtn.getId());
-            /*newBtn.setOnClickListener(new View.OnClickListener() {
+            newBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int buttonid = v.getId();
-                    Service serviceToAdd = services.get(buttonid);
-                    TextView serviceAdded = findViewById(R.id.serviceAddedTextView);
-                    userRef.child(MainActivity.getUser().getUsername()).child("userServices").child(serviceToAdd.getServiceName()).setValue(new Service(serviceToAdd.getServiceName(),serviceToAdd.getRate(),serviceToAdd.getEmployee()));
+                    Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
+                    PatientScreen.setCurrentCinic(clinics.get(buttonid));
+                    startActivity(intent);
+
 
                 }
-            });*/
-            //buttons.add(newBtn);
+            });
+            buttons.add(newBtn);
             layout.addView(newBtn);
         }
 
     }
+
+
 
 }

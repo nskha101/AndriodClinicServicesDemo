@@ -26,6 +26,7 @@ public class PatientScreen extends AppCompatActivity{
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference userRef = database.getReference("users");
     final ArrayList<Clinic> clinic = new ArrayList<>();
+    private static Clinic currentCinic = new Clinic("","","","","");
 
 
     @Override
@@ -52,6 +53,14 @@ public class PatientScreen extends AppCompatActivity{
     public void onSeeAllClinic(View view){
         Intent intent = new Intent(getApplicationContext(), SeeAllClinic.class);
         startActivity(intent);
+    }
+
+    public static Clinic getCurrentClinic(){
+        return currentCinic;
+    }
+
+    public static void setCurrentCinic(Clinic clinic){
+        currentCinic = clinic;
     }
 
 //    public static final Pattern VALID_ADDRESS_REGEX = Pattern.compile("[A-Za-z0-9'\\.\\-\\s\\,]", Pattern.CASE_INSENSITIVE);
