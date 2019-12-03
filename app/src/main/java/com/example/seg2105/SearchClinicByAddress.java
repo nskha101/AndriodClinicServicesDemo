@@ -16,9 +16,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SearchClinicByAddress extends AppCompatActivity {
 
+    public static final Pattern VALID_ADDRESS_REGEX = Pattern.compile("[A-Za-z0-9'\\.\\-\\s\\,]", Pattern.CASE_INSENSITIVE);
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference Ref = database.getReference("clinics");
@@ -41,23 +44,29 @@ public class SearchClinicByAddress extends AppCompatActivity {
 
         String address = addressEditText.getText().toString();
 
-        System.out.println("input:  "+address);
+        if(validateAddress(address)) {
 
-        boolean found = false;
 
-        for (Clinic clinic:clinics){
-            System.out.println("compared to: "+ clinic.getClinicAdress());
-            if (clinic.getClinicAdress().equals(address)){
-                System.out.println("found");
+            boolean found = false;
 
-                found = true;
-                PatientScreen.setCurrentCinic(clinic);
-                Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
-                startActivity(intent);
+            for (Clinic clinic : clinics) {
+                System.out.println("compared to: " + clinic.getClinicAdress());
+                if (clinic.getClinicAdress().equals(address)) {
+                    System.out.println("found");
+
+                    found = true;
+                    PatientScreen.setCurrentCinic(clinic);
+                    Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
+                    startActivity(intent);
+                }
+
             }
-
+            if (!found) {
+                Toast.makeText(getApplicationContext(), "No clinic found with that address", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(getApplicationContext(), "Not a valid address", Toast.LENGTH_SHORT).show();
         }
-        if (!found){Toast.makeText(getApplicationContext(),"No clinic found with that address", Toast.LENGTH_SHORT).show();}
     }
 
 
@@ -90,5 +99,10 @@ public class SearchClinicByAddress extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), PatientScreen.class);
         startActivity(intent);
         finish();
+    }
+
+    public static boolean validateAddress(String search){
+        Matcher matcher = VALID_ADDRESS_REGEX.matcher(search);
+        return matcher.find();
     }
 }

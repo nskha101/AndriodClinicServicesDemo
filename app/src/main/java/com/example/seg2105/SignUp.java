@@ -154,6 +154,8 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
     }
 
+    public void toast(){}
+
 
     public static boolean validatepatientorEmployee(String patientorEmployee) {
         return ((patientorEmployee.equals("Patient")) || (patientorEmployee.equals("Employee")));

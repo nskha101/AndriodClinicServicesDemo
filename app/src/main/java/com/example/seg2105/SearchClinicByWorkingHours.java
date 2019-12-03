@@ -24,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 
 public class SearchClinicByWorkingHours extends AppCompatActivity  implements AdapterView.OnItemSelectedListener {
 
@@ -207,5 +208,15 @@ public class SearchClinicByWorkingHours extends AppCompatActivity  implements Ad
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public static boolean validateTimes(String startTime, String endTime){
+        int st = timeToInt(startTime);
+        int et = timeToInt(endTime);
+        return (st<et);
+    }
+
+    public static int timeToInt(String time){
+        return Integer.parseInt(time.substring(0, time.indexOf(":")));
     }
 }
