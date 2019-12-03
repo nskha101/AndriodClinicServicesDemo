@@ -39,7 +39,7 @@ public class AddEmployeeService extends AppCompatActivity {
     }
 
     public void getAllServices(){
-        servicesRef.child("clinics").addValueEventListener(new ValueEventListener() {
+        servicesRef.child("services").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //fetch all the child of Services

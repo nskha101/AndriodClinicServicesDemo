@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AddService extends AppCompatActivity {
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference serviceRef = database.getReference("clinics");
+    final DatabaseReference serviceRef = database.getReference("services");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
