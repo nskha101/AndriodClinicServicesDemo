@@ -25,6 +25,7 @@ public class SeeAllClinic extends AppCompatActivity {
     ArrayList<Button> buttons = new ArrayList<>();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference clinicRef = database.getReference().child("clinics");
+    private Boolean alreadySeen;
 
 
     @Override
@@ -33,6 +34,7 @@ public class SeeAllClinic extends AppCompatActivity {
         setContentView(R.layout.activity_see_all_clinic);
 
         getAllClinic();
+        alreadySeen = false;
     }
 
     private void getAllClinic() {
@@ -58,28 +60,31 @@ public class SeeAllClinic extends AppCompatActivity {
         });
     }
     private void showClinic(){
+        if(!alreadySeen){
+            Button newBtn;
+            LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayoutScrollView);
+            for (int i = 0; i < clinics.size(); i++) {
+                newBtn = new Button(this);
+                newBtn.setText("Name: " + clinics.get(i).getClinicName() + "\r\nAddress: " + clinics.get(i).getClinicAdress() + "\nPhone number: " + clinics.get(i).getClinicPhoneNum());
+                newBtn.setId(i);
+                System.out.println(newBtn.getId());
+                newBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int buttonid = v.getId();
+                        Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
+                        PatientScreen.setCurrentCinic(clinics.get(buttonid));
+                        startActivity(intent);
 
-        Button newBtn;
-        LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayoutScrollView);
-        for (int i = 0; i < clinics.size(); i++) {
-            newBtn = new Button(this);
-            newBtn.setText("Name: " + clinics.get(i).getClinicName() + "\r\nAddress: " + clinics.get(i).getClinicAdress() + "\nPhone number: " + clinics.get(i).getClinicPhoneNum());
-            newBtn.setId(i);
-            System.out.println(newBtn.getId());
-            newBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int buttonid = v.getId();
-                    Intent intent = new Intent(getApplicationContext(), ClinicProfile.class);
-                    PatientScreen.setCurrentCinic(clinics.get(buttonid));
-                    startActivity(intent);
 
-
-                }
-            });
-            buttons.add(newBtn);
-            layout.addView(newBtn);
+                    }
+                });
+                buttons.add(newBtn);
+                layout.addView(newBtn);
+                alreadySeen =true;
+            }
         }
+
 
     }
 

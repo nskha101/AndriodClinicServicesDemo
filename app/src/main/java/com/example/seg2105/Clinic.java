@@ -39,6 +39,18 @@ public class Clinic {
         this.numrated = 0;
     }
 
+    public Clinic (String clinicName, String clinicAddress, String clinicPhoneNum, String clinicInsurance, String clinicPayment, String creator, int waiting){
+        this.clinicName=clinicName;
+        this.clinicAddress=clinicAddress;
+        this.clinicPhoneNum=clinicPhoneNum;
+        this.clinicInsurance=clinicInsurance;
+        this.clinicPayment=clinicPayment;
+        this.creator=creator;
+        this.rating=0;
+        this.waiting=waiting;
+        this.numrated = 0;
+    }
+
     public String getClinicName(){
         return clinicName;
     }
@@ -75,6 +87,7 @@ public class Clinic {
 
     public void setClinicPayment(String payment){clinicPayment = payment;}
 
+    public void setWaiting(int thisWaiting){ waiting = thisWaiting;}
 
     public void print(){
         System.out.println("Clinic Name: "+clinicName);
